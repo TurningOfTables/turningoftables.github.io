@@ -3,10 +3,10 @@
 	{{ range .Params.tags }}
 	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 	{{ end }}
-	<div>
+	<div id="post-summary">
 		{{ .Summary }}
 		{{ if .Truncated }}
-			<a href="{{ .Permalink }}">Read more...</a>
+			<a href="{{ .Permalink }}">More...</a>
 		{{ end }}
 	</div>
 </article>

@@ -4,9 +4,7 @@ date: 2022-12-23T19:20:44Z
 draft: false
 ---
 
-It really doesn't have to be. I've had the pleasure of interviewing a lot of different software testers over the years and many can talk interestingly and intelligently about testing.
-
-There is a certain subset of testers that just make *me* want to quit testing though.
+It really doesn't have to be. There is a certain subset of testers that just make *me* want to quit testing though. <!--more-->
 
 Primarily they have a background working in large companies with significantly sized test teams. The processes are static and unchallenged, the testers themselves are passive and often subservient. They appear to wait for work to come their way, and expect it to be a rote set of checks to follow. Get the ticket, test the ticket, get the ticket, test the ticket.
 

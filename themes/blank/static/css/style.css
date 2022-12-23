@@ -11,6 +11,14 @@ header {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+article {
+    text-align: justify
+}
+
+#back-link {
+    font-size: 2rem;
 }

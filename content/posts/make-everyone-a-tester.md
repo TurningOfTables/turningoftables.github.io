@@ -5,6 +5,7 @@ draft: false
 ---
 
 One of the most damaging elements of traditional software development culture has been a strict allocation of duties between disciplines.
+<!--more-->
 
 "The designer draws some pictures and describes some functionality, the developers write code to make those pictures, the testers check that it works as expected."
 

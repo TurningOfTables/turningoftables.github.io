@@ -1,10 +1,10 @@
 ---
-title: "Test Automation Won't Save You"
+title: "Test Automation Is Not Magic"
 date: 2022-12-23T19:20:13Z
 draft: false
 ---
 
-Over the years as I've been a part of numerous web development projects which lack test automation. One recurring theme is the idea that test automation is a silver bullet. "Test automation will allow us to check hundreds of items in seconds", goes the thinking. "Once we create a test suite I can always just press a button to be assured of quality", it continues.
+Over the years as I've been a part of numerous web development projects which lack test automation. A recurring theme is the idea that test automation is magic. It isn't. <!--more-->"Test automation will allow us to check hundreds of items in seconds", goes the thinking. "Once we create a test suite I can always just press a button to be assured of quality", it continues.
 
 This is a dangerous and risky set of assumptions to make.
 
