@@ -1,7 +1,7 @@
 ---
 title: "Stop Making Testing Boring"
 date: 2022-12-23T19:20:44Z
-draft: true
+draft: false
 ---
 
 It really doesn't have to be. I've had the pleasure of interviewing a lot of different software testers over the years and many can talk interestingly and intelligently about testing.

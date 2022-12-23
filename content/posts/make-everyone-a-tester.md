@@ -1,7 +1,7 @@
 ---
 title: "Make Everyone a Tester"
 date: 2022-12-23T19:57:06Z
-draft: true
+draft: false
 ---
 
 One of the most damaging elements of traditional software development culture has been a strict allocation of duties between disciplines.
