@@ -1,0 +1,4 @@
+baseURL = 'https://turningoftables.github.io/'
+languageCode = 'en-us'
+title = 'Turning of Tables'
+theme = 'blank'
