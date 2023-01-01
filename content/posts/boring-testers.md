@@ -1,5 +1,5 @@
 ---
-title: "Stop Making Testing Boring"
+title: "Boring Testers"
 date: 2022-12-23T19:20:44Z
 draft: false
 ---
