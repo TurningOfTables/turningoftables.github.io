@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    max-width: 50%;
+    margin: auto;
+}
+
+header { 
+    font-size: 2rem;
+    font-weight: bolder
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}

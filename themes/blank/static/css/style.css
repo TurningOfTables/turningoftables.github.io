@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    max-width: 50%;
+    margin: auto;
+}
+
+header { 
+    font-size: 2rem;
+    font-weight: bolder
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+article {
+    text-align: justify
+}
+
+#back-link {
+    font-size: 2rem;
+}

@@ -1,0 +1,7 @@
+baseURL = 'https://turningoftables.github.io/'
+languageCode = 'en-us'
+title = 'Turning of Tables'
+theme = 'blank'
+summaryLength = '40'
+[Params]
+  description = "Miscellaneous thoughts on testing and software development"
