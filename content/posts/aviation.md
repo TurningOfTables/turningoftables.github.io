@@ -4,7 +4,7 @@ date: 2023-01-21T12:18:56Z
 draft: false
 ---
 
-An important lesson that has been learned in safety critical environments such as aviation over decades of flying and - sadly - numerous accidents, is that one layer of safety is not enough.
+An important lesson that has been learned in safety critical environments such as aviation over decades of flying and - sadly - numerous accidents, is that one layer of safety is not enough.<!--more-->
 
 In aviation, important actions are always checked and confirmed multiple times, often by different people using different methods or with different areas of expertise.
 
