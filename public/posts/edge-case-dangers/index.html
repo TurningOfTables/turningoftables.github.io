@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>The dangers of overplaying the edge case card</title>
+	<meta name="description" content="Miscellaneous thoughts on testing and software development">
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+</head>
+<body>
+	<header>
+	<a href="https://turningoftables.github.io/">Turning of Tables</a>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>The dangers of overplaying the edge case card</h1>
+			<time datetime="2023-02">02.2023</time>
+			<div>
+				<p>Making lots of small decisions that are suboptimal but only affect a small amount of your user base is deceptively damaging over time.</p>
+<p>It&rsquo;s commonplace to be faced with the following following choice during development:</p>
+<p>a) Do something quick and easy to implement, but which knowingly annoys a tiny proportion of your users.</p>
+<p>b) Do something slower and harder to implement, but which makes your users happy.</p>
+<p>Generally the resulting decision in my experience has been a), and I can initially understand why. It allows you to keep things moving forward, and it appears to have a very small cost.</p>
+<p>However, beware of making these decisions over and over again and seeing them as individual choices rather than cumulative.</p>
+<p>Your first decision of a) annoys 0.5% of your users (for example). Who cares! It&rsquo;s an edge case that you can&rsquo;t spend your time worrying about. There are bigger fish to fry.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>You then forget about it in the next release, and make another a) decision in a different feature. +0.5% annoyed users.</p>
+<p>Now 5% of your users are annoyed. Decisions like this go on and on, without any view of their cumulative effects on the overall project. Of course these numbers are all illustrative - the groups of annoyed users might overlap, and you might be gaining more happy users with your new features than you are annoying with your compromises.</p>
+<p>Far be it from me to suggest that compromises aren&rsquo;t sometimes required, and in fact I&rsquo;m a strong believer in the idea that the perfect (software) is the enemy of the good (software) - but be very keenly aware that while you may be making different decisions on disparate features, they don&rsquo;t disappear in the next release - they accumulate.</p>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+	<footer>
+	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+</body>
+</html>

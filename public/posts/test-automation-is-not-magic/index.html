@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Test Automation Is Not Magic</title>
+	<meta name="description" content="Miscellaneous thoughts on testing and software development">
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+</head>
+<body>
+	<header>
+	<a href="https://turningoftables.github.io/">Turning of Tables</a>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Test Automation Is Not Magic</h1>
+			<time datetime="2022-12">12.2022</time>
+			<div>
+				<p>Over the years as I&rsquo;ve been a part of numerous web development projects which lack test automation. A recurring theme is the idea that test automation is magic. It isn&rsquo;t.</p>
+<p>&ldquo;Test automation will allow us to check hundreds of items in seconds&rdquo;, goes the thinking. &ldquo;Once we create a test suite I can always just press a button to be assured of quality&rdquo;, it continues.</p>
+<p>This is a dangerous and risky set of assumptions to make.</p>
+<p>Test automation can help achieve your goals of course, but numerous other challenges and requirements are often forgotten in the pursuit of this imaginary happy land of automated quality. Here are some considerations.</p>
+<h3 id="is-the-application-usefully-testable-with-automation">Is The Application Usefully Testable With Automation?</h3>
+<p>This is the most critical question to ask yourself and one that I&rsquo;ve seen trip up many well meaning attempts to benefit from automated tests. Think carefully about the application you want to test.</p>
+<p>If it is unpredictable - for example it is hosted on a slow or unreliable test environment, or relies on numerous third parties - automation may produce numerous intermittent failures that are hard to address.</p>
+<p>If the application is under constant change, especially from work streams you may not have visibility of (third party integrations are often a cause here), failures may quickly swamp any created automation in required maintenance time and overwhelm its usefulness.</p>
+<p>If the site has not been built to support automation, expect slow progress and a need to add data-test attributes to create reliable and effective tests - this might require developer or additional tester time investment.</p>
+<h3 id="does-your-team-know-how-to-do-it">Does Your Team Know How To Do It?</h3>
+<p>You need people who can write reliable automation within a reasonable period of time. Respect this as you would any other technical skill, and don&rsquo;t assume it can be picked up effectively in a very short period.</p>
+<p>A common plan is to train existing manual testers with automated tools. It&rsquo;s tempting as a cost saving measure, and with the right people and enough support this can absolutely work. However it&rsquo;s a lengthy process and requires setting aside time from every day testing duties. The alternative is to hire new staff with automation skills which can take time and be costly.</p>
+<h3 id="have-you-understood-the-setup-process">Have You Understood The Setup Process?</h3>
+<p>Approaching the automation of an existing project carries with it the requirement of a major investment up front.</p>
+<p>You will spend a large amount of time in the project set up and creation of the initial set of tests.</p>
+<ul>
+<li>Framework and language</li>
+<li>Test report creation, storage and access</li>
+<li>Pipeline configuration and triggering</li>
+<li>Target test environment(s)</li>
+<li>Test data creation and usage</li>
+</ul>
+<p>Even once these decisions are made, you will need to build up the test coverage itself over time before you begin to see serious benefits.</p>
+<h3 id="can-you-maintain-your-tests">Can You Maintain Your Tests?</h3>
+<p>Test automation is rarely just a one and done process. Unless the project is extraordinarily static, you can&rsquo;t write it then walk away dusting your hands.</p>
+<p>On any reasonably sized and regularly updated code base your automation will need regular adjustment and care in order to keep it relevant and useful. New or changed behaviours, bug fixes and structural changes cause tests to need updating. The people tasked with this will need to have knowledge of the framework being used, the software under test and the automated test project itself.</p>
+<p>This process goes chronically overlooked in almost every web project I&rsquo;ve been a part of, and is especially difficult to handle when your automated tests are being carried out against partially completed work which might change several times a day. When and where to carry out updates is a fine balance to strike.</p>
+<h3 id="how-will-you-respond-to-failures">How Will You Respond To Failures?</h3>
+<p>Once you&rsquo;ve ensured your team has the skills, agreed on a set up, built your automation and have allocated time for maintenance, you&rsquo;re <em>still</em> not there. There&rsquo;s no point in tests if the failures are ignored.</p>
+<p>Every time your tests run, if a failure is reported you need to be sure somebody will respond to it. Often the interpretation of such failures requires the same three items needed for effective maintenance - knowledge of the test framework, of the site you&rsquo;re testing and the test project.</p>
+<p>The person responding needs to assess each failure and either update or fix the affected test, or raise an issue to be fixed.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In conclusion, it is vital that you think about all these things <em>before</em> you decide that automation is the right solution for you. Automation is not magic and it will not instantly solve your problems. It will help you cover an immense number of checks in a short period but only if you invest time, effort and money into its creation as you would any other software project.</p>
+<p>Are you genuinely confident in the following?</p>
+<ul>
+<li>
+<p>The target website is reliable enough, reasonably set up to allow automation and not moving so fast as to make tests fragile and maintenance unmanageable.</p>
+</li>
+<li>
+<p>Your existing team has good knowledge of automation, they can be given the time and support to train in its use, or you can afford to hire additional specialist automation staff.</p>
+</li>
+<li>
+<p>You and your team fully understand all the decisions that go into creating a successful and useful set of automated tests.</p>
+</li>
+<li>
+<p>You are able to commit to having the capacity of people with knowledge of the site under test, the automation framework and the automation project available with enough capacity to handle maintenance and failure responses.</p>
+</li>
+</ul>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+	<footer>
+	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+</body>
+</html>

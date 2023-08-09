@@ -2,10 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://turningoftables.github.io/posts/beware-becoming-the-hero/</loc>
+    <lastmod>2023-05-01T20:12:18+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/</loc>
+    <lastmod>2023-05-01T20:12:18+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/</loc>
+    <lastmod>2023-05-01T20:12:18+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/edge-case-dangers/</loc>
+    <lastmod>2023-02-19T16:38:18+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/aviation/</loc>
+    <lastmod>2023-01-21T12:18:56+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/choosing-an-automated-test-framework/</loc>
+    <lastmod>2023-01-01T13:08:48+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/make-everyone-a-tester/</loc>
+    <lastmod>2022-12-23T19:57:06+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/boring-testers/</loc>
+    <lastmod>2022-12-23T19:20:44+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/test-automation-is-not-magic/</loc>
+    <lastmod>2022-12-23T19:20:13+00:00</lastmod>
+  </url><url>
     <loc>https://turningoftables.github.io/categories/</loc>
   </url><url>
     <loc>https://turningoftables.github.io/tags/</loc>
-  </url><url>
-    <loc>https://turningoftables.github.io/</loc>
   </url>
 </urlset>
