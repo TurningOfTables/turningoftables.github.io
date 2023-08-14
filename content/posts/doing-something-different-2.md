@@ -22,7 +22,7 @@ I also came armed with an idea that I had been toying with for a while in a very
 
 My first protype then, described above, was to be part story, part typing/terminal based, and part social commentary...yikes.
 
-Wow this was hard, and for a while quite disheartening - especially as the first thing since I'd started to try and Do Something DIfferent.
+Wow this was hard, and for a while quite disheartening - especially as the first thing since I'd started to try and Do Something Different.
 
 Alongside that though, it was really interesting, because it taught me a lot - not so much about the technical side - but about the challenges and skills involved in designing a game which is fun to play; taking an abstract idea and turning it into a concrete set of logic which creates the feelings and experiences you're aiming for is _really_ hard.
 
