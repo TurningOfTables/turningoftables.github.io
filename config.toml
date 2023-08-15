@@ -4,4 +4,4 @@ title = 'Turning of Tables'
 theme = 'blank'
 summaryLength = '40'
 [Params]
-  description = "Miscellaneous thoughts on testing and software development"
+  description = "Miscellaneous software development and testing"
