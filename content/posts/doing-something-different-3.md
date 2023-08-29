@@ -78,7 +78,6 @@ Firstly, if I have to learn a larger topic then I find books to be preferable to
 
 Secondly - and connected with the firstly - disconnecting learning from an immediate problem to solve, and learning merely with the goal of obtaining knowledge to apply to future currently unknown problems, was a nice change and removed a lot of the pressure. If I was interested or thought an area could be useful, I would explore it without guilt and as a result I believe learned more.
 
-
 Thirdly, I get on extremely well with Go so far. It provides what I'm looking for in a reasonable learning curve, with enough support to find solutions if I'm struggling and most importantly a philosophy of simplicity and clarity.
 
 Finally, I rediscovered a love of coding. When I first moved from manual testing into writing automated tests, it was like a world opened up before me as I realised I had the ability to do so much. Over the subsequent years I think my horizons narrowed as I was pushed by time constraints and speed demands to only create the bare minimum automated testing without thought for longer term improvements or creative approaches.
