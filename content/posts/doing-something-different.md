@@ -4,7 +4,7 @@ date: 2023-08-09T09:54:37+01:00
 draft: false
 ---
 
- A little earlier this year I decided that I wanted to try something different.<!--more-->
+A little earlier this year I decided that I wanted to try something different.<!--more-->
 
 At that point I'd been testing software for around 15 years across games and web e-commerce and I found myself doing the same things over and over again. The faces change, the CSS gets fancier, the automation frameworks rise and fall, and JavaScript bundles grow, but the routines were pretty familiar.
 

@@ -12,7 +12,7 @@ As with games, I have a bit of a history with coding, especially certain types o
 For some time I had a hankering for a language that was a little stricter without being oppressive and Go seemed to fit that nicely. I'd also dabbled in Go a little over the years and was keen to use it more thoroughly. More on the features and philosophy of the language and my feelings about it [later](#the-go-programming-language).
 
 
-## The Plan
+### The Plan
 
 Here my plan was a little different. Instead of focussing on creating a couple of prototype games where the product was the goal and the tooling a little more incidental, this time I would be focussing on gaining a good understanding of Go - the resulting output was less of an immediate concern.
 
@@ -21,7 +21,7 @@ To this end I did something I've never done before in learning a programming lan
 My knowledge of Ruby and JavaScript was mostly gleaned from the necessity of a particular task at a particular point rather than setting out with an idea to take a [different and more structured approach to the learning](#the-different-learning-approach). 
 
 
-## How It Went
+### How It Went
 
 I really, really enjoyed this. Perhaps because it was a little closer to my experience than games development, and perhaps because at heart I enjoy writing code - I'm not entirely sure, but it definitely grabbed me.
 
@@ -39,9 +39,9 @@ After the initial foundation into Go from my book learning, these tasks pushed m
 I am absolutely never going to claim that I 'know' a language, or that I even know how much I know about a language. These weeks spent on first book learning and then creating my own projects though have given me confidence that I both enjoy coding outside automation, and can do it.
 
 
-## Learning and Thoughts
+### Learning and Thoughts
 
-### The Go Programming Language
+#### The Go Programming Language
 
 Exploring Go, I realised that its design philosophy mirrors much of my own feelings about what code and software should be. 
 
@@ -56,7 +56,7 @@ Compared to Ruby and JavaScript, on the whole I find I like the greater confiden
 Oh and I like the Go gopher too :)
 
 
-### The Different Learning Approach
+#### The Different Learning Approach
 
 Something I've realised over the years but never applied that much to coding is that I learn really well from books, more than I do from online materials like posts, courses and videos. I don't totally understand why but I think my brain reads and absorbs information from printed pages at a much more sensible pace, whereas decades of computer and Internet use have trained me that a computer screen means 'skim until you identify one nugget of information, then get out'.
 
@@ -70,7 +70,7 @@ In much of my work on Go skills this time I was able to read about, experiment w
 
 Where time permits, I would definitely learn in this way again, although I suspect my chances of doing so while 'on the job' might be more limited. It certainly made me appreciate having the time to have no goal but to learn, rather than read one thing to solve one problem while being bombarded with Slack messages.
 
-## Conclusion
+### Conclusion
 
 I found so many things I liked in this chapter. Well, some I knew I liked but had lost some of my enthusiasm for over the years.
 

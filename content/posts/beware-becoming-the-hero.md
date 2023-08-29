@@ -6,7 +6,7 @@ draft: false
 
 Ah, the hero. The gallant, the brave, the ever-present and ever-helpful champion of many a software venture. But beware of what lies just beneath the surface. <!--more-->
 
-## Who is _The Hero_?
+### Who is _The Hero_?
 
 If you've spent any time in project work, you've probably met a hero. They'll stand out for being that person everybody can rely on to pull a rabbit out of a hat and save the day.
 
@@ -14,7 +14,7 @@ They turn up, they take on any task, they work overtime, they solve problems and
 
 They are a natural favourite of managers, producers and clients alike for their ability to solve immediate problems fast.
 
-## The Good in _The Hero_
+### The Good in _The Hero_
 
 I am not criticising hard work and accomplishment in the work place, and there are tremendous benefits to be had from heroic deeds and mammoth undertakings. I also do not criticise heroes themselves, as the intentions are generally pure and come from a sincere desire to perform well.
 
@@ -22,11 +22,11 @@ Heroes produce a lot of short term value, and are perceived as proactive and ene
 
 In my experience heroes are also good people - really good people. They put in a huge amount of effort doing the best job possible, and as a result are extremely competent at their skill. What's not discussed are the negative impacts this work style can have, and what it says about the environment in which the work is taking place. In many cases the hero is not to blame for their position, but are put into difficult positions by demanding timelines and deadlines. These other aspects are hard to see past the blaze of good PR that it generates.
 
-## The Downsides of _The Hero_
+### The Downsides of _The Hero_
 
 When a hero is well embedded into your development's projects and workflows, it has impacts at multiple levels.
 
-### Themselves
+#### Themselves
 
 The hero themselves eventually suffers if they perform beyond a sustainable level every day for an extended period.
 
@@ -36,7 +36,7 @@ This leads to long work hours, extra days spent catching up on the mass of work 
 
 Thus the workload of the hero is in danger of growing over time and becoming unmanageable; the high pressure of maintaining hero status results in poor delegation, and the tendency to 'take it all on themselves'.
 
-### Peers
+#### Peers
 
 Peers of the hero feel negative effects too, in this environment. They are overlooked for opportunities and thus denied the chance to prove themselves or increase their own confidence and abilities. Their belief and morale suffers and their boredom increases.
 
@@ -44,7 +44,7 @@ Resentment grows in the background when praise is heaped upon one person. The he
 
 Rushed work inevitably decreases quality and causes longer term issues with maintenance - issues which then cannot easily be solved because the knowledge of the original solution is held by the hero alone.
 
-### The Company
+#### The Company
 
 Companies can appear to benefit from the sort of hard work - including unpaid overtime - produced by heroes, but again there are hidden and subtle longer term problems with this setup.
 
@@ -52,7 +52,7 @@ Firstly, the company - especially a small one - can come to rely on a hero to pr
 
 Secondly, the work done in this fashion is only suitable to meet a specific short term requirement. It isn't until later on - usually gradually rather than all at once - that solutions devised by fatigued workers without capacity to share any domain knowledge show their true nature.
 
-## Conclusion
+### Conclusion
 
 Now that we're largely beyond the age of knights, swords and damsels in distress, exploiting heroic work is - to abruptly switch metaphors - junk food. Tempting, fast and providing quick satisfaction to immediate problems.
 

@@ -10,15 +10,15 @@ As discussed in the previous chaper, I have a long history with games. My parent
 
 When I was thinking about possible career paths to explore then, games development seemed like a good one for the list.
 
-## The Plan
+### The Plan
 
 My plan was to create a couple of working prototypes over several weeks, in the process learning how to use a games engine. After a little casting about I settled on [Godot](https://godotengine.org/) for its active community, good documentation, availability of tutorials, Python-esque scripting language which prioritised productivity and free-ness. 
 
 I also came armed with an idea that I had been toying with for a while in a non-committal way - a game where you control drones working for a spy organisation in the 1970s using clicky clacky IBM computers - but the goal here was really to explore the process of making a game and how it differed from web development in which I'd worked for the last decade or so.
 
-## How It Went
+### How It Went
 
-### No Name Drone Game
+#### No Name Drone Game
 
 My first protype then, described above, was to be part story, part typing/terminal based, and part social commentary … yikes.
 
@@ -34,7 +34,7 @@ I talk more about the challenges of this open-ended nature of games design below
 
 Fail fast … right?
 
-### Pluccy
+#### Pluccy
 
 This was my second prototype and I decided to approach a much more simple idea, with a more well defined genre and expectations, then give it a little twist.
 
@@ -44,7 +44,7 @@ In this prototype I found it much easier to keep making forward progress, as the
 
 The end result, while short and simple, was a lot more encouraging than my No Name Drone Game, because I had more to show for it at the end, gained a lot more practice with Godot and felt I'd created a playable - if short - experience.
 
-## Learning and Thoughts
+### Learning and Thoughts
 
 The first thing I discovered over this four weeks was that my brain was conditioned in the wrong way for this kind of task. With a background in testing, working more on the implementation side of things, my thought process tended to work back from the end of the development timeline.
 
@@ -56,7 +56,7 @@ Furthermore, the open and flexible nature of game creation was a change from the
 
 In games, these barriers don't exist or are much less well defined. If you can imagine it (and have the requisite skill and time), chances are you can build it. Genres are often blurred and remixed, new and interesting ways to tell stories are discovered and interactions are a great deal more varied. To the first time games maker coming from a background of web development, this was scary.
 
-## Conclusion
+### Conclusion
 
 Overall I was pleased with what I'd learned in this month, but a little deflated that I hadn't managed to turn my dream idea into much of anything. I did gain understanding of the [Godot](https://godotengine.org/) engine (an engine I would now heartily recommend), although naturally there was still much, much more that I hadn't even touched on yet. Not least 3D games, aside from the 3D tutorial project. I also gained an insight into the challenges of designing in such an open ended medium with no prior games design experience.
 

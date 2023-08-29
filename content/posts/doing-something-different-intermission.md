@@ -19,7 +19,7 @@ Many experienced developers at all levels up to and including principal and CTO 
 
 This is of course the classic experience of [Impostor Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome), and I half expected it to happen when I made this shift. In fact, its presence is probably not remarkable in itself.
 
-## Coding, Transparency and Impostor Syndrome
+### Coding, Transparency and Impostor Syndrome
 
 I think coding and programming in particular are skills that encourage that feeling - perhaps more so than other job roles. My experience of software development often treats coders as a somewhat 'special' role, with boundaries drawn between 'tech' and 'non-tech' roles. I might be going a little far here, but people with less experience of coding often seem to see it as akin to magic. Many times I've seen a Product Owner make a request of developers; the developers go away and huddle around a cauldron in private, stir it a little and then declare whether the request can or cannot be completed and in what timeframe. I rarely see that response challenged or questioned, or even any digging for an explanation. On the one hand I absolutely agree that coding restrictions or difficulties _can_ be difficult to explain (although I believe the best engineers are the best explainers), but a lack of transparency is allowed between coding and non-coding roles which I suspect would be less acceptable in other interactions.
 
