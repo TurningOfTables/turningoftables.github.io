@@ -32,6 +32,11 @@ A quick set of memory prompts for common patterns in Go. To avoid repetition the
   - [Testing](#testing-1)
     - [HTTP GET Response](#http-get-response)
     - [HTTP POST Response](#http-post-response)
+- [SQL](#sql)
+  - [Connect to DB](#connect-to-db)
+  - [Query DB](#query-db)
+  - [Query Row DB](#query-row-db)
+  - [Exec DB](#exec-db)
 
 
 ## For Loops
@@ -224,6 +229,8 @@ func ExampleSum() {
 ```
 
 ## Fiber
+___
+
 
 ### Passing Variable to Handler
 
@@ -259,11 +266,113 @@ func TestGet(t *testing.T) {
 
 #### HTTP POST Response
 ```
+type Movie struct {
+    Title string
+    Year int
+}
+
 func TestPost(t *testing.T) {
 
-    postBody := 
-    app := initApp()
+    postBody := Movie{Title: "Bee Movie", Year: 2007}
+    json, err := json.Marshal(postBody)
+    if err != nil {
+        t.Error(err)
+    }
+    reader := bytes.NewReader(json)
 
+    app := initApp()
     req := httptest.NewRequest(http.MethodPost, "/", )
+    resp, err := app.Test(req)
+    if err != nil {
+        t.Error(err)
+    }
+
+    var m Movie
+    defer resp.Body.Close()
+    body, err := io.ReadAll(resp.Body)
+    if err != nil {
+        t.Error(err)
+    }
+
+    if err := json.Unmarshal(body, &m); err != nil {
+        t.Error(err)
+    }
+
+    assert.Equal(t, 201, resp.StatusCode)
+    assert.Equal(t, Movie{Title: "Bee Movie", Year: 2007}, m)
+
+}
+```
+
+## SQL
+___
+
+
+### Connect to DB
+
+```
+db, err := sql.Open("postgres", "postgresql://user:password@localhost/database?sslmode=disable")
+if err != nil {
+    panic(err)
+}
+```
+
+### Query DB
+
+```
+type Movie struct {
+    Title string
+    Year int
+}
+
+var movies []Movie
+
+
+rows, err := db.Query("SELECT * FROM movies)
+if err != nil {
+    panic(err)
+}
+defer rows.Close()
+
+for rows.Next() {
+    var movie Movie
+    if err := rows.Scan(&movie.Title, &movie.Year); err != nil {
+        panic(err)
+    }
+    cars = append(cars, car)
+}
+```
+
+### Query Row DB
+
+```
+type Movie struct {
+    Title string
+    Year int
+}
+
+var movie Movie
+searchId := 1
+row := db.QueryRow("SELECT * FROM movies WHERE id = $1", searchId)
+row.Scan(&movie.Title, &movie.Year)
+
+if movie.ID != searchId {
+    panic("No entry found")
+}
+```
+
+### Exec DB
+
+```
+type Movie struct {
+    Title string
+    Year int
+}
+
+m := Movie{Title: "Bee Movie", Year: 2007}
+
+_, err := db.Exec("INSERT into movies (title, year) VALUES ($1, $2)", movie.Title, movie.Year)
+if err != nil {
+    panic(err)
 }
 ```
