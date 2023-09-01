@@ -11,6 +11,6 @@ summaryLength = '40'
     pageRef = '/'
     weight = 10
   [[menu.main]]
-    name = 'Go Reference'
+    name = 'Go Quick Reference'
     pageRef = '/goref'
     weight = 20
