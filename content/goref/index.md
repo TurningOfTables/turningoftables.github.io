@@ -6,6 +6,10 @@ type: "goref"
 kind: "single"
 ---
 
+A quick set of memory prompts for common patterns in Go. To avoid repetition they don't contain the surrounding code to make them runnable (like `package main` or `import`)
+
+Not very navigable for now, but I'll look to add some anchors and a table of contents.
+
 ## For Loops
 ___
 
@@ -27,7 +31,7 @@ for i = 0, i <= len(numbers), i ++ {
 var numbers = []int{1, 2, 3}
 
 for index, value := range numbers {
-	fmt.Printf("index: %d, value: %d\n", i, v")
+	fmt.Printf("index: %d, value: %d\n", index, value")
 }
 ```
 
