@@ -1,0 +1,21 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<h1 class="post-title">{{ .Title }}</h1>
+			<div>
+				{{ .Content }}
+			</div>
+			{{ with .Params.tags }}
+			<div>
+				<ul id="tags">
+					{{ range . }}
+					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</div>
+
+			{{ end }}
+			<a id='back-link' href="{{ .Site.BaseURL }}"><</a>
+		</article>
+	</main>
+{{ end }}

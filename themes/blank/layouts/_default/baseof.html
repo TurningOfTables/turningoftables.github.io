@@ -24,7 +24,12 @@
 	<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}
 	<meta name="author" content="{{ . }}">{{ end }}
+
+	{{ if eq .Type "goref" }}
+	<link rel="stylesheet" href="{{ "css/goref_style.css" | relURL }}">
+	{{ else }}
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+	{{ end }}
 	{{ with .OutputFormats.Get "RSS" -}}
 	{{ printf `
 	<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
