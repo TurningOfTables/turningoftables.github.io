@@ -6,14 +6,38 @@ type: "goref"
 kind: "single"
 ---
 
-A quick set of memory prompts for common patterns in Go. To avoid repetition they don't contain the surrounding code to make them runnable (like `package main` or `import`)
+A quick set of memory prompts for common patterns in Go. To avoid repetition they usually don't contain the surrounding code to make them runnable (like `package main` or `import`)
 
-Not very navigable for now, but I'll look to add some anchors and a table of contents.
+- [For Loops](#for-loops)
+  - [Basic](#basic)
+  - [With Index, Value](#with-index-value)
+- [Error Handling](#error-handling)
+  - [Basic](#basic-1)
+  - [Using Short Statement If](#using-short-statement-if)
+- [JSON Handling](#json-handling)
+  - [Struct -\> JSON](#struct---json)
+  - [JSON -\> Struct](#json---struct)
+- [Functions](#functions)
+  - [Anonymous](#anonymous)
+  - [Assigning to a variable](#assigning-to-a-variable)
+  - [Variadic](#variadic)
+  - [Deferred call](#deferred-call)
+- [Testing](#testing)
+  - [Basic](#basic-2)
+  - [With testify assertions](#with-testify-assertions)
+  - [Benchmark function](#benchmark-function)
+  - [Example function](#example-function)
+- [Fiber](#fiber)
+  - [Passing Variable to Handler](#passing-variable-to-handler)
+  - [Testing](#testing-1)
+    - [HTTP GET Response](#http-get-response)
+    - [HTTP POST Response](#http-post-response)
+
 
 ## For Loops
 ___
 
-### Basic For Loop
+### Basic
 
 ```
 var numbers = []int{1, 2, 3}
@@ -25,7 +49,7 @@ for i = 0, i <= len(numbers), i ++ {
 
 
 
-### For Loop With Index, Value
+### With Index, Value
 
 ```
 var numbers = []int{1, 2, 3}
@@ -41,7 +65,7 @@ for index, value := range numbers {
 ___
 
 
-### Basic Error Handling
+### Basic
 
 
 ```
@@ -63,7 +87,7 @@ if err := json.Unmarshal(a, &b); err != nil {
 ## JSON Handling
 ___
 
-### Marshall struct into JSON
+### Struct -> JSON
 
 ```
 type Movie struct {
@@ -81,7 +105,7 @@ if err != nil {
 fmt.Println(output) // byte array
 ```
 
-### Unmarshall JSON into struct
+### JSON -> Struct
 
 ```
 type Movie struct {
@@ -109,7 +133,7 @@ if err := json.Unmarshal(b, &movie); err != nil {
 ## Functions
 ___
 
-### Anonymous function
+### Anonymous
 
 ```
 func main() {
@@ -119,7 +143,7 @@ func main() {
 }
 ```
 
-### Assigning an anonymous function to a variable
+### Assigning to a variable
 
 ```
 func main() {
@@ -131,7 +155,7 @@ func main() {
 }
 ```
 
-### Variadic function
+### Variadic
 
 ```
 func sum(vals ...int) int {
@@ -144,7 +168,7 @@ func sum(vals ...int) int {
 }
 ```
 
-### Deferred function call
+### Deferred call
 
 ```
 func netRequest(url string) error {
@@ -159,7 +183,7 @@ func netRequest(url string) error {
 ## Testing
 ___
 
-### Basic test function
+### Basic
 ```
 func TestSum(t *testing.T) {
 	res := Sum(1, 2)
@@ -170,7 +194,7 @@ func TestSum(t *testing.T) {
 ```
 
 
-### Basic test function (with testify)
+### With testify assertions
 
 ```
 func TestSum(t *testing.T) {
@@ -179,7 +203,7 @@ func TestSum(t *testing.T) {
 }
 ```
 
-### Basic benchmark function
+### Benchmark function
 
 ```
 func BenchmarkSum(b *testing.B) {
@@ -189,12 +213,57 @@ func BenchmarkSum(b *testing.B) {
 }
 ```
 
-### Basic example function
+### Example function
 
 ```
 func ExampleSum() {
 	res := Sum(1, 2)
 	fmt.Println(res)
 	// Output: 3
+}
+```
+
+## Fiber
+
+### Passing Variable to Handler
+
+```
+somevar := "foo"
+app.Get("/", func(c *fiber.Ctx) error {
+    return indexHandler(c, somevar)
+})
+```
+
+
+### Testing
+
+Assumes you have abstracted setup for your app into an initApp(), such that this returns an instance of the app with configuration such as routes already in place.
+
+#### HTTP GET Response
+
+
+```
+func TestGet(t *testing.T) {
+    app := initApp() 
+
+    req := httptest.NewRequest(http.MethodGet, "/", nil)
+    resp, err := app.Test(req)
+    if err != nil {
+        t.Error(err)
+    }
+
+    assert.Equal(t, 200, resp.StatusCode)
+}
+
+```
+
+#### HTTP POST Response
+```
+func TestPost(t *testing.T) {
+
+    postBody := 
+    app := initApp()
+
+    req := httptest.NewRequest(http.MethodPost, "/", )
 }
 ```
