@@ -5,3 +5,12 @@ theme = 'blank'
 summaryLength = '40'
 [Params]
   description = "Miscellaneous thoughts on software development and testing"
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menu.main]]
+    name = 'Go Reference'
+    pageRef = '/goref'
+    weight = 20

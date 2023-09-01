@@ -42,3 +42,8 @@ pre {
     font-size: 1rem;
     overflow-x: scroll;
 }
+
+nav {
+    font-size: 1rem;
+    padding: 10px;
+}

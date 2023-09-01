@@ -35,3 +35,8 @@ article {
 #back-link {
     font-size: 2rem;
 }
+
+nav {
+    font-size: 1rem;
+    padding: 10px;
+}
