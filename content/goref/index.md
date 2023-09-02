@@ -10,6 +10,9 @@ A quick set of memory prompts for common patterns in Go. To avoid repetition the
 
 - [For Loops](#for-loops)
   - [Basic](#basic)
+  - [Single condition](#single-condition)
+  - [Infinite loop](#infinite-loop)
+  - [Ending loops](#ending-loops)
   - [With Index, Value](#with-index-value)
 - [Error Handling](#error-handling)
   - [Basic](#basic-1)
@@ -37,6 +40,21 @@ A quick set of memory prompts for common patterns in Go. To avoid repetition the
   - [Query DB](#query-db)
   - [Query Row DB](#query-row-db)
   - [Exec DB](#exec-db)
+- [Data Types](#data-types)
+  - [Maps](#maps)
+    - [Create](#create)
+    - [Set key/value](#set-keyvalue)
+    - [Clear key/value](#clear-keyvalue)
+    - [Check for key presence](#check-for-key-presence)
+  - [Slices](#slices)
+    - [Create](#create-1)
+    - [Create with length](#create-with-length)
+    - [Set value](#set-value)
+    - [Literal](#literal)
+    - [Append](#append)
+    - [Slice up to but not including element](#slice-up-to-but-not-including-element)
+    - [Slice from and including element](#slice-from-and-including-element)
+    - [Multi-dimensional](#multi-dimensional)
 
 
 ## For Loops
@@ -52,6 +70,27 @@ for i = 0, i <= len(numbers), i ++ {
 }
 ```
 
+### Single condition
+```
+i := 1
+for i <= 3 {
+    fmt.Println(i)
+    i ++
+}
+```
+
+### Infinite loop
+```
+for {
+    fmt.Println("And again")
+}
+```
+
+### Ending loops
+```
+break // breaks out of the entire loop
+continue // starts the next iteration of the current loop
+```
 
 
 ### With Index, Value
@@ -305,6 +344,7 @@ func TestPost(t *testing.T) {
 ```
 
 ## SQL
+
 ___
 
 
@@ -375,4 +415,98 @@ _, err := db.Exec("INSERT into movies (title, year) VALUES ($1, $2)", movie.Titl
 if err != nil {
     panic(err)
 }
+```
+
+## Data Types
+
+### Maps
+
+[Full docs](https://pkg.go.dev/maps)
+
+#### Create
+```
+m := make(map[string]int)
+```
+
+#### Set key/value
+```
+m := make(map[string]int)
+m["k1"] = 1
+```
+
+#### Clear key/value
+```
+m := map[string]int{"foo": 1}
+delete(m, "foo")
+```
+
+#### Check for key presence
+```
+m := map[string]int{"foo": 1}
+
+_, ok := m["bar"]
+if !ok {
+    fmt.Println("Not found")
+} else {
+    fmt.Println("Found")
+}
+
+// Not found
+```
+
+### Slices
+
+[Full docs](https://pkg.go.dev/slices)
+
+#### Create 
+```
+var s []string
+```
+
+#### Create with length
+```
+s := make([]string, 3)
+```
+
+#### Set value
+```
+s := make([]string, 3)
+s[0] = "a"
+```
+
+#### Literal
+```
+t := []string{"a", "b", "c"}
+```
+
+#### Append
+```
+t := []string{"a", "b", "c"}
+t = append(t, "d")
+```
+
+#### Slice up to but not including element
+```
+t := []string{"a", "b", "c"}
+l := t[:2]
+// [a b]
+```
+
+#### Slice from and including element
+```
+t := []string{"a", "b", "c"}
+l := t[1:]
+// [b c]
+```
+
+#### Multi-dimensional
+```
+multi := make([][]int, 3)
+for i := 0; i < len(multi); i ++ {
+    multi[i] = make([]int, 2)
+    for j := 0; j < 2; j++ {
+        multi[i][j] = 1
+    }
+}
+// [[1 1] [1 1] [1 1]]
 ```

@@ -1,5 +1,5 @@
 ---
-title: "Doing Something Different - Intermission"
+title: "Something Different - Intermission"
 date: 2023-08-29T14:38:57+01:00
 draft: false
 ---
