@@ -55,6 +55,14 @@ A quick set of memory prompts for common patterns in Go. To avoid repetition the
     - [Slice up to but not including element](#slice-up-to-but-not-including-element)
     - [Slice from and including element](#slice-from-and-including-element)
     - [Multi-dimensional](#multi-dimensional)
+- [HTTP](#http)
+  - [GET Request](#get-request)
+  - [POST Request With Body](#post-request-with-body)
+  - [With headers](#with-headers)
+  - [With query params](#with-query-params)
+  - [Parse JSON Response Body](#parse-json-response-body)
+- [Type conversion](#type-conversion)
+  - [string \<-\> T (int, float, bool)](#string---t-int-float-bool)
 
 
 ## For Loops
@@ -419,6 +427,8 @@ if err != nil {
 
 ## Data Types
 
+
+
 ### Maps
 
 [Full docs](https://pkg.go.dev/maps)
@@ -510,3 +520,91 @@ for i := 0; i < len(multi); i ++ {
 }
 // [[1 1] [1 1] [1 1]]
 ```
+
+## HTTP
+
+### GET Request
+
+```
+res, err := http.Get("https://www.example.com")
+if err != nil {
+    panic(err)
+}
+
+// Do something with the response
+```
+
+### POST Request With Body
+```
+someBody := "informationtosend"
+
+res, err := http.Post("https://www.example.com", "text/plain", strings.NewReader(someBody))
+if err !+ nil {
+    panic(err)
+}
+
+// Do something with the response
+```
+
+### With headers
+```
+req, _ := http.NewRequest("GET", "https://www.example.com", nil)
+req.Header.Set("X-Api-Key", "mykey")
+res, err := http.DefaultClient.Do(req)
+if err != nil {
+    panic(err)
+}
+
+// Do something with the response
+```
+
+### With query params
+```
+params := url.Values{
+    "yourparam1": {"yourparamvalue1"},
+    "yourparam2": {"yourparamvalue2"},
+}
+
+req, _ := http.NewRequest("GET", "https://www.example.com" + params.Encode(), nil)
+res, err := http.DefaultClient.Do(req)
+if err != nil {
+    panic(err)
+}
+
+// Do something with the response
+```
+
+### Parse JSON Response Body
+```
+
+type Res struct {
+    Foo string
+    Bar string
+}
+
+res, err := http.Get("https://www.example.com")
+if err != nil {
+    panic(err)
+}
+
+b, err := io.ReadAll(res.Body)
+if err != nil {
+    panic(err)
+}
+
+var r Res
+
+// Reads b []byte into r Res
+if err := json.Unmarshal(b, &r); err != nil {
+    panic(err)
+}
+
+
+```
+
+## Type conversion
+
+### string <-> T (int, float, bool)
+
+See [strconv package](https://pkg.go.dev/strconv#Atoi)
+
