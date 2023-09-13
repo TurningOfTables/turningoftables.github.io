@@ -2,6 +2,7 @@
 title: "The dangers of overplaying the edge case card"
 date: 2023-02-19T16:38:18Z
 draft: false
+icon: 🎴
 ---
 
 Making lots of small decisions that are suboptimal but only affect a small amount of your user base is deceptively damaging over time.<!--more-->

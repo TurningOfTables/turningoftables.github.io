@@ -2,6 +2,7 @@
 title: "Something Different #2 - Games"
 date: 2023-08-14T14:05:18+01:00
 draft: false
+icon: 🕹️
 ---
 
 The first thing I tried, was learning how to make games<!--more-->

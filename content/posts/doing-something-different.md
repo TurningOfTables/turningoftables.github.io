@@ -2,6 +2,7 @@
 title: "Something Different #1 - Needing a Change"
 date: 2023-08-09T09:54:37+01:00
 draft: false
+icon: 🤔
 ---
 
 A little earlier this year I decided that I wanted to try something different.<!--more-->

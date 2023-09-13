@@ -2,6 +2,7 @@
 title: "Something Different #3 - Go"
 date: 2023-08-15T09:09:12+01:00
 draft: false
+icon: 🧑‍💻
 ---
 
 The second thing I did, was learn to code in Go<!--more-->

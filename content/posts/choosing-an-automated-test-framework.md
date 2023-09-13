@@ -2,6 +2,7 @@
 title: "Choosing an Automated Test Framework"
 date: 2023-01-01T13:08:48Z
 draft: false
+icon: 🖼️
 ---
 
 When deciding on a framework or tool for automation, there are a dizzying array of possibilities. There are certainly no right and wrong answers - but an outline of what to consider might look like this.<!--more-->

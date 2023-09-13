@@ -2,6 +2,7 @@
 title: "Beware Becoming The Hero"
 date: 2023-05-01T20:12:18+01:00
 draft: false
+icon: 🦸
 ---
 
 Ah, the hero. The gallant, the brave, the ever-present and ever-helpful champion of many a software venture. But beware of what lies just beneath the surface. <!--more-->

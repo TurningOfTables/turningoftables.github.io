@@ -2,6 +2,7 @@
 title: "Boring Testers"
 date: 2022-12-23T19:20:44Z
 draft: false
+icon: 🥱
 ---
 
 Testing really doesn't have to be boring. There is a certain subset of testers that just make me want to quit testing though. <!--more-->

@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Turning of Tables'
 theme = 'blank'
 summaryLength = '40'
+paginate = '999999999999999'
 [Params]
   description = "Miscellaneous thoughts on software development and testing"
 [menu]

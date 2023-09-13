@@ -2,6 +2,7 @@
 title: "Test Automation Is Not Magic"
 date: 2022-12-23T19:20:13Z
 draft: false
+icon: 🪄
 ---
 
 Over the years as I've been a part of numerous web development projects which lack test automation. A recurring theme is the idea that test automation is magic. It isn't. <!--more-->"Test automation will allow us to check hundreds of items in seconds", goes the thinking. "Once we create a test suite I can always just press a button to be assured of quality", it continues.
