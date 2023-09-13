@@ -61,3 +61,5 @@ Clearly I will never know all of the requirements and features of a project befo
 This was a super useful project in that I had to confront a few things I hadn't done before. I got deeper into configuration, saving and retrieving files, and also dabbled into creating my first basic UI with the Fyne framework.
 
 I'm also fairly pleased with the end result in terms of functionality. The code would certainly benefit from a little more tidying and documentation, but a user can run the binary, enter their details and be getting planespotting notifications in just a couple of minutes. 🎉
+
+[Check it out on Github!](https://github.com/TurningOfTables/planespotter)
