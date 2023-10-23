@@ -14,6 +14,7 @@ A quick set of memory prompts for common patterns in Go. To avoid repetition the
   - [Infinite loop](#infinite-loop)
   - [Ending loops](#ending-loops)
   - [With Index, Value](#with-index-value)
+- [Commonly used format 'verbs' for printing](#commonly-used-format-verbs-for-printing)
 - [Error Handling](#error-handling)
   - [Basic](#basic-1)
   - [Using Short Statement If](#using-short-statement-if)
@@ -112,6 +113,17 @@ for index, value := range numbers {
 ```
 
 
+
+## Commonly used format 'verbs' for printing
+
+```
+    %v – default format
+    %+v - default format with field names
+    %d – base 10
+    %g – float
+    %t – boolean
+    %s – string
+```
 
 ## Error Handling
 ___
