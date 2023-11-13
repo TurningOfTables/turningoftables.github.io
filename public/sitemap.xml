@@ -2,17 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://turningoftables.github.io/posts/beware-becoming-the-hero/</loc>
-    <lastmod>2023-05-01T20:12:18+01:00</lastmod>
+    <loc>https://turningoftables.github.io/posts/a-quick-dip/</loc>
+    <lastmod>2023-09-27T12:18:56+00:00</lastmod>
   </url><url>
     <loc>https://turningoftables.github.io/posts/</loc>
-    <lastmod>2023-05-01T20:12:18+01:00</lastmod>
+    <lastmod>2023-09-27T12:18:56+00:00</lastmod>
   </url><url>
     <loc>https://turningoftables.github.io/</loc>
+    <lastmod>2023-09-27T12:18:56+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/planespotting/</loc>
+    <lastmod>2023-09-13T10:53:13+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/doing-something-different-intermission/</loc>
+    <lastmod>2023-08-29T14:38:57+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/doing-something-different-3/</loc>
+    <lastmod>2023-08-15T09:09:12+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/doing-something-different-2/</loc>
+    <lastmod>2023-08-14T14:05:18+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/doing-something-different/</loc>
+    <lastmod>2023-08-09T09:54:37+01:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/posts/beware-becoming-the-hero/</loc>
     <lastmod>2023-05-01T20:12:18+01:00</lastmod>
   </url><url>
     <loc>https://turningoftables.github.io/posts/edge-case-dangers/</loc>
     <lastmod>2023-02-19T16:38:18+00:00</lastmod>
+  </url><url>
+    <loc>https://turningoftables.github.io/goref/</loc>
+    <lastmod>2023-01-21T12:18:56+00:00</lastmod>
   </url><url>
     <loc>https://turningoftables.github.io/posts/aviation/</loc>
     <lastmod>2023-01-21T12:18:56+00:00</lastmod>

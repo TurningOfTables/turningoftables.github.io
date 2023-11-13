@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<title>Planespotting</title>
+	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
+	<main>
+		<article>
+			<h1 class="post-title">Planespotting</h1>
+			<time datetime="2023-09">09.2023</time>
+			<div>
+				<p>A Go app to show nearby planes</p>
+<h3 id="the-initial-idea">The initial idea</h3>
+<p>Actually it wasn&rsquo;t really my idea. I came across another implementation of a planespotting app in JavaScript using the OpenSky API and thought, &ldquo;I will do that but in Go&rdquo;. Then I did a bit more searching and it turns out there are tons of these.</p>
+<p>Undaunted, I wanted to make it anyway because it combines two things that I like: planes and Go.</p>
+<p>I had some idea of the basic requirements up front:</p>
+<ul>
+<li>be able to specify a location you&rsquo;re at</li>
+<li>be able to specify a radius in which you want to be notified about planes</li>
+<li>send an OS notification when a plane was &lsquo;spotted&rsquo;</li>
+</ul>
+<p>As usual, I knew that this was likely to grow a little as I had ideas during development - and it did a little!</p>
+<h3 id="writing-iterating-refactoring">Writing, Iterating, Refactoring</h3>
+<p>After initially writing the basic functionality above without too much trouble, I added on a couple of neat (at least to me!) features. The first was the ability to feed config in from outside the app, so you didn&rsquo;t have to specify it each time and it would be easier to set up for other users. The second was saving &lsquo;progress&rsquo; of some sort - this culminated in a list of the flight numbers and a total of how many planes you&rsquo;ve spotted. Keeping a list of flight numbers also prevented the same plane being constantly &lsquo;spotted&rsquo; as it stayed in the area nearby; especially obvious if your location is set at or near an airport.</p>
+<p>Once I had these in place, I decided the app was getting big enough to need a bit of splitting out. I created sub-folders with packages of &lsquo;helpers&rsquo; for everything outside <code>main.go</code>. So I had <code>helpers/save/save.go</code> and <code>helpers/config/config.go</code> and <code>helpers/formatters/formatters.go</code> etc., each with their own tests such as <code>helpers/save/save_test.go</code></p>
+<p>This worked just fine, and in fact I rather liked splitting the code into &lsquo;systems&rsquo;.</p>
+<h3 id="adding-the-ui">Adding the UI</h3>
+<p>What happened next was I decided I wanted to add a UI, and this proved harder than expected. I used the <a href="https://fyne.io/">Fyne</a> and found it to be simple to pick up and create functional and decent looking APIs. However it was tricky to integrate into my previously written (and structured code).</p>
+<p>The UI needs to run from main - all good so far. The UI also needed to interact with other areas of functionality in the helpers - again, no problem. However the helpers <em>also</em> needed to access back into main in order to update the UI on changes such as status, or saves, which was hard to do - going back <em>up</em> the tree, as it were.</p>
+<p>So what did I do in the end? I moved much of the code back out of their own sub-folder packages, and instead just split it into files in the root of the project as part of the main package. So <code>helpers/save/save.go</code> with <code>package save</code> became <code>/save.go</code> with <code>package main</code>.</p>
+<p>This allowed easier access between the different sections of the apps, while I kept packages that didn&rsquo;t need to push info back into the UI in <code>helpers/</code> (namely, the <code>formatters</code>). Overall I did solve the problems, although it required significantly more work than I expected.</p>
+<p>On reflection, my mindset was probably used to building an API which can then be universally consumed by a front end client. In this case though, since I hadn&rsquo;t really built an &lsquo;API&rsquo; to be &lsquo;universally consumed&rsquo;, when it came to adding a consumer it was tough going.</p>
+<h3 id="what-i-would-do-differently">What I would do differently</h3>
+<p>There are two main lessons I can take from this about how I write more code into projects.</p>
+<p>#1</p>
+<p>My code needs to have more cleanly defined boundaries, and be written to be consumed cleanly and more agnostically. Different functionalities should be better split out. <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of Concerns</a></p>
+<p>In general this was less of an issue in my smaller earlier projects, but the larger they get the more this becomes something I need to manage better.</p>
+<p>#2</p>
+<p>Clearly I will never know all of the requirements and features of a project before even starting to write it. However, adding in the UI was a fairly major turn - I think if I&rsquo;d decided on this significant part earlier on then it would have saved a significant amount of pain later. I should try and decide on the <em>large</em> pillars or requirements before starting, even if additional smaller items are added in later.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>This was a super useful project in that I had to confront a few things I hadn&rsquo;t done before. I got deeper into configuration, saving and retrieving files, and also dabbled into creating my first basic UI with the Fyne framework.</p>
+<p>I&rsquo;m also fairly pleased with the end result in terms of functionality. The code would certainly benefit from a little more tidying and documentation, but a user can run the binary, enter their details and be getting planespotting notifications in just a couple of minutes. 🎉</p>
+<p><a href="https://github.com/TurningOfTables/planespotter">Check it out on Github!</a></p>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+		<footer>
+	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
+</body>
+
+</html>

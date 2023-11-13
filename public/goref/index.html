@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<title>Go Quick Reference</title>
+	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
+	<main>
+		<article>
+			<h1 class="ref-title">Go Quick Reference</h1>
+			<div>
+				<p>A quick set of memory prompts for common patterns in Go. To avoid repetition they usually don&rsquo;t contain the surrounding code to make them runnable (like <code>package main</code> or <code>import</code>)</p>
+<ul>
+<li><a href="#for-loops">For Loops</a>
+<ul>
+<li><a href="#basic">Basic</a></li>
+<li><a href="#single-condition">Single condition</a></li>
+<li><a href="#infinite-loop">Infinite loop</a></li>
+<li><a href="#ending-loops">Ending loops</a></li>
+<li><a href="#with-index-value">With Index, Value</a></li>
+</ul>
+</li>
+<li><a href="#commonly-used-format-verbs-for-printing">Commonly used format &lsquo;verbs&rsquo; for printing</a></li>
+<li><a href="#error-handling">Error Handling</a>
+<ul>
+<li><a href="#basic-1">Basic</a></li>
+<li><a href="#using-short-statement-if">Using Short Statement If</a></li>
+</ul>
+</li>
+<li><a href="#json-handling">JSON Handling</a>
+<ul>
+<li><a href="#struct---json">Struct -&gt; JSON</a></li>
+<li><a href="#json---struct">JSON -&gt; Struct</a></li>
+</ul>
+</li>
+<li><a href="#functions">Functions</a>
+<ul>
+<li><a href="#anonymous">Anonymous</a></li>
+<li><a href="#assigning-to-a-variable">Assigning to a variable</a></li>
+<li><a href="#variadic">Variadic</a></li>
+<li><a href="#deferred-call">Deferred call</a></li>
+</ul>
+</li>
+<li><a href="#testing">Testing</a>
+<ul>
+<li><a href="#basic-2">Basic</a></li>
+<li><a href="#with-testify-assertions">With testify assertions</a></li>
+<li><a href="#benchmark-function">Benchmark function</a></li>
+<li><a href="#example-function">Example function</a></li>
+</ul>
+</li>
+<li><a href="#fiber">Fiber</a>
+<ul>
+<li><a href="#passing-variable-to-handler">Passing Variable to Handler</a></li>
+<li><a href="#testing-1">Testing</a>
+<ul>
+<li><a href="#http-get-response">HTTP GET Response</a></li>
+<li><a href="#http-post-response">HTTP POST Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sql">SQL</a>
+<ul>
+<li><a href="#connect-to-db">Connect to DB</a></li>
+<li><a href="#query-db">Query DB</a></li>
+<li><a href="#query-row-db">Query Row DB</a></li>
+<li><a href="#exec-db">Exec DB</a></li>
+</ul>
+</li>
+<li><a href="#data-types">Data Types</a>
+<ul>
+<li><a href="#maps">Maps</a>
+<ul>
+<li><a href="#create">Create</a></li>
+<li><a href="#set-keyvalue">Set key/value</a></li>
+<li><a href="#clear-keyvalue">Clear key/value</a></li>
+<li><a href="#check-for-key-presence">Check for key presence</a></li>
+</ul>
+</li>
+<li><a href="#slices">Slices</a>
+<ul>
+<li><a href="#create-1">Create</a></li>
+<li><a href="#create-with-length">Create with length</a></li>
+<li><a href="#set-value">Set value</a></li>
+<li><a href="#literal">Literal</a></li>
+<li><a href="#append">Append</a></li>
+<li><a href="#slice-up-to-but-not-including-element">Slice up to but not including element</a></li>
+<li><a href="#slice-from-and-including-element">Slice from and including element</a></li>
+<li><a href="#multi-dimensional">Multi-dimensional</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#http">HTTP</a>
+<ul>
+<li><a href="#get-request">GET Request</a></li>
+<li><a href="#post-request-with-body">POST Request With Body</a></li>
+<li><a href="#with-headers">With headers</a></li>
+<li><a href="#with-query-params">With query params</a></li>
+<li><a href="#parse-json-response-body">Parse JSON Response Body</a></li>
+</ul>
+</li>
+<li><a href="#type-conversion">Type conversion</a>
+<ul>
+<li><a href="#string---t-int-float-bool">string &lt;-&gt; T (int, float, bool)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="for-loops">For Loops</h2>
+<hr>
+<h3 id="basic">Basic</h3>
+<pre tabindex="0"><code>var numbers = []int{1, 2, 3}
+
+for i = 0, i &lt;= len(numbers), i ++ {
+	fmt.Printf(&#34;value: %d\n&#34;, numbers[i])
+}
+</code></pre><h3 id="single-condition">Single condition</h3>
+<pre tabindex="0"><code>i := 1
+for i &lt;= 3 {
+    fmt.Println(i)
+    i ++
+}
+</code></pre><h3 id="infinite-loop">Infinite loop</h3>
+<pre tabindex="0"><code>for {
+    fmt.Println(&#34;And again&#34;)
+}
+</code></pre><h3 id="ending-loops">Ending loops</h3>
+<pre tabindex="0"><code>break // breaks out of the entire loop
+continue // starts the next iteration of the current loop
+</code></pre><h3 id="with-index-value">With Index, Value</h3>
+<pre tabindex="0"><code>var numbers = []int{1, 2, 3}
+
+for index, value := range numbers {
+	fmt.Printf(&#34;index: %d, value: %d\n&#34;, index, value&#34;)
+}
+</code></pre><h2 id="commonly-used-format-verbs-for-printing">Commonly used format &lsquo;verbs&rsquo; for printing</h2>
+<pre tabindex="0"><code>    %v – default format
+    %+v - default format with field names
+    %d – base 10
+    %g – float
+    %t – boolean
+    %s – string
+</code></pre><h2 id="error-handling">Error Handling</h2>
+<hr>
+<h3 id="basic-1">Basic</h3>
+<pre tabindex="0"><code>data, err := io.Readfile(filename)
+if err != nil {
+	panic(err)
+}
+</code></pre><h3 id="using-short-statement-if">Using Short Statement If</h3>
+<pre tabindex="0"><code>if err := json.Unmarshal(a, &amp;b); err != nil {
+	panic(err)
+}
+</code></pre><h2 id="json-handling">JSON Handling</h2>
+<hr>
+<h3 id="struct---json">Struct -&gt; JSON</h3>
+<pre tabindex="0"><code>type Movie struct {
+	Title string
+	Year int
+}
+
+movie := Movie{Title: &#34;Bee Movie&#34;, Year: 2007}
+
+output, err := json.Marshal(movie)
+if err != nil {
+	panic (err)
+}
+
+fmt.Println(output) // byte array
+</code></pre><h3 id="json---struct">JSON -&gt; Struct</h3>
+<pre tabindex="0"><code>type Movie struct {
+	Title string
+	Year int
+}
+
+var movie Movie
+resp, err := http.Get(&#34;https://www.example.com&#34;)
+if err != nil {
+	panic(err)
+}
+
+b, err := io.ReadAll(resp.Body)
+if err != nil {
+	panic(err)
+}
+defer resp.Body.Close()
+
+if err := json.Unmarshal(b, &amp;movie); err != nil {
+	panic(err)
+}
+</code></pre><h2 id="functions">Functions</h2>
+<hr>
+<h3 id="anonymous">Anonymous</h3>
+<pre tabindex="0"><code>func main() {
+	func(){
+		fmt.Println(&#34;I am an anonymous function&#34;)
+	}()
+}
+</code></pre><h3 id="assigning-to-a-variable">Assigning to a variable</h3>
+<pre tabindex="0"><code>func main() {
+	afunc := func(){
+		fmt.Println(&#34;I am an anonymous function&#34;)
+	}
+	
+	afunc()
+}
+</code></pre><h3 id="variadic">Variadic</h3>
+<pre tabindex="0"><code>func sum(vals ...int) int {
+	total := 0
+	for _, val := range vals {
+		total += val
+	}
+	
+	return total
+}
+</code></pre><h3 id="deferred-call">Deferred call</h3>
+<pre tabindex="0"><code>func netRequest(url string) error {
+	resp, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+}
+</code></pre><h2 id="testing">Testing</h2>
+<hr>
+<h3 id="basic-2">Basic</h3>
+<pre tabindex="0"><code>func TestSum(t *testing.T) {
+	res := Sum(1, 2)
+	if res != 3 {
+		t.Errorf(&#34;Sum(1, 2) = %d; want 3&#34;, res)
+	}
+}
+</code></pre><h3 id="with-testify-assertions">With testify assertions</h3>
+<pre tabindex="0"><code>func TestSum(t *testing.T) {
+	res := Sum(1, 2)
+	assert.Equal(t, 3, res)
+}
+</code></pre><h3 id="benchmark-function">Benchmark function</h3>
+<pre tabindex="0"><code>func BenchmarkSum(b *testing.B) {
+	for i := 0; i &lt; b.N; i ++ {
+		Sum(1, 2)
+	}
+}
+</code></pre><h3 id="example-function">Example function</h3>
+<pre tabindex="0"><code>func ExampleSum() {
+	res := Sum(1, 2)
+	fmt.Println(res)
+	// Output: 3
+}
+</code></pre><h2 id="fiber">Fiber</h2>
+<hr>
+<h3 id="passing-variable-to-handler">Passing Variable to Handler</h3>
+<pre tabindex="0"><code>somevar := &#34;foo&#34;
+app.Get(&#34;/&#34;, func(c *fiber.Ctx) error {
+    return indexHandler(c, somevar)
+})
+</code></pre><h3 id="testing-1">Testing</h3>
+<p>Assumes you have abstracted setup for your app into an initApp(), such that this returns an instance of the app with configuration such as routes already in place.</p>
+<h4 id="http-get-response">HTTP GET Response</h4>
+<pre tabindex="0"><code>func TestGet(t *testing.T) {
+    app := initApp() 
+
+    req := httptest.NewRequest(http.MethodGet, &#34;/&#34;, nil)
+    resp, err := app.Test(req)
+    if err != nil {
+        t.Error(err)
+    }
+
+    assert.Equal(t, 200, resp.StatusCode)
+}
+</code></pre><h4 id="http-post-response">HTTP POST Response</h4>
+<pre tabindex="0"><code>type Movie struct {
+    Title string
+    Year int
+}
+
+func TestPost(t *testing.T) {
+
+    postBody := Movie{Title: &#34;Bee Movie&#34;, Year: 2007}
+    json, err := json.Marshal(postBody)
+    if err != nil {
+        t.Error(err)
+    }
+    reader := bytes.NewReader(json)
+
+    app := initApp()
+    req := httptest.NewRequest(http.MethodPost, &#34;/&#34;, )
+    resp, err := app.Test(req)
+    if err != nil {
+        t.Error(err)
+    }
+
+    var m Movie
+    defer resp.Body.Close()
+    body, err := io.ReadAll(resp.Body)
+    if err != nil {
+        t.Error(err)
+    }
+
+    if err := json.Unmarshal(body, &amp;m); err != nil {
+        t.Error(err)
+    }
+
+    assert.Equal(t, 201, resp.StatusCode)
+    assert.Equal(t, Movie{Title: &#34;Bee Movie&#34;, Year: 2007}, m)
+
+}
+</code></pre><h2 id="sql">SQL</h2>
+<hr>
+<h3 id="connect-to-db">Connect to DB</h3>
+<pre tabindex="0"><code>db, err := sql.Open(&#34;postgres&#34;, &#34;postgresql://user:password@localhost/database?sslmode=disable&#34;)
+if err != nil {
+    panic(err)
+}
+</code></pre><h3 id="query-db">Query DB</h3>
+<pre tabindex="0"><code>type Movie struct {
+    Title string
+    Year int
+}
+
+var movies []Movie
+
+
+rows, err := db.Query(&#34;SELECT * FROM movies)
+if err != nil {
+    panic(err)
+}
+defer rows.Close()
+
+for rows.Next() {
+    var movie Movie
+    if err := rows.Scan(&amp;movie.Title, &amp;movie.Year); err != nil {
+        panic(err)
+    }
+    cars = append(cars, car)
+}
+</code></pre><h3 id="query-row-db">Query Row DB</h3>
+<pre tabindex="0"><code>type Movie struct {
+    Title string
+    Year int
+}
+
+var movie Movie
+searchId := 1
+row := db.QueryRow(&#34;SELECT * FROM movies WHERE id = $1&#34;, searchId)
+row.Scan(&amp;movie.Title, &amp;movie.Year)
+
+if movie.ID != searchId {
+    panic(&#34;No entry found&#34;)
+}
+</code></pre><h3 id="exec-db">Exec DB</h3>
+<pre tabindex="0"><code>type Movie struct {
+    Title string
+    Year int
+}
+
+m := Movie{Title: &#34;Bee Movie&#34;, Year: 2007}
+
+_, err := db.Exec(&#34;INSERT into movies (title, year) VALUES ($1, $2)&#34;, movie.Title, movie.Year)
+if err != nil {
+    panic(err)
+}
+</code></pre><h2 id="data-types">Data Types</h2>
+<h3 id="maps">Maps</h3>
+<p><a href="https://pkg.go.dev/maps">Full docs</a></p>
+<h4 id="create">Create</h4>
+<pre tabindex="0"><code>m := make(map[string]int)
+</code></pre><h4 id="set-keyvalue">Set key/value</h4>
+<pre tabindex="0"><code>m := make(map[string]int)
+m[&#34;k1&#34;] = 1
+</code></pre><h4 id="clear-keyvalue">Clear key/value</h4>
+<pre tabindex="0"><code>m := map[string]int{&#34;foo&#34;: 1}
+delete(m, &#34;foo&#34;)
+</code></pre><h4 id="check-for-key-presence">Check for key presence</h4>
+<pre tabindex="0"><code>m := map[string]int{&#34;foo&#34;: 1}
+
+_, ok := m[&#34;bar&#34;]
+if !ok {
+    fmt.Println(&#34;Not found&#34;)
+} else {
+    fmt.Println(&#34;Found&#34;)
+}
+
+// Not found
+</code></pre><h3 id="slices">Slices</h3>
+<p><a href="https://pkg.go.dev/slices">Full docs</a></p>
+<h4 id="create-1">Create</h4>
+<pre tabindex="0"><code>var s []string
+</code></pre><h4 id="create-with-length">Create with length</h4>
+<pre tabindex="0"><code>s := make([]string, 3)
+</code></pre><h4 id="set-value">Set value</h4>
+<pre tabindex="0"><code>s := make([]string, 3)
+s[0] = &#34;a&#34;
+</code></pre><h4 id="literal">Literal</h4>
+<pre tabindex="0"><code>t := []string{&#34;a&#34;, &#34;b&#34;, &#34;c&#34;}
+</code></pre><h4 id="append">Append</h4>
+<pre tabindex="0"><code>t := []string{&#34;a&#34;, &#34;b&#34;, &#34;c&#34;}
+t = append(t, &#34;d&#34;)
+</code></pre><h4 id="slice-up-to-but-not-including-element">Slice up to but not including element</h4>
+<pre tabindex="0"><code>t := []string{&#34;a&#34;, &#34;b&#34;, &#34;c&#34;}
+l := t[:2]
+// [a b]
+</code></pre><h4 id="slice-from-and-including-element">Slice from and including element</h4>
+<pre tabindex="0"><code>t := []string{&#34;a&#34;, &#34;b&#34;, &#34;c&#34;}
+l := t[1:]
+// [b c]
+</code></pre><h4 id="multi-dimensional">Multi-dimensional</h4>
+<pre tabindex="0"><code>multi := make([][]int, 3)
+for i := 0; i &lt; len(multi); i ++ {
+    multi[i] = make([]int, 2)
+    for j := 0; j &lt; 2; j++ {
+        multi[i][j] = 1
+    }
+}
+// [[1 1] [1 1] [1 1]]
+</code></pre><h2 id="http">HTTP</h2>
+<h3 id="get-request">GET Request</h3>
+<pre tabindex="0"><code>res, err := http.Get(&#34;https://www.example.com&#34;)
+if err != nil {
+    panic(err)
+}
+
+// Do something with the response
+</code></pre><h3 id="post-request-with-body">POST Request With Body</h3>
+<pre tabindex="0"><code>someBody := &#34;informationtosend&#34;
+
+res, err := http.Post(&#34;https://www.example.com&#34;, &#34;text/plain&#34;, strings.NewReader(someBody))
+if err !+ nil {
+    panic(err)
+}
+
+// Do something with the response
+</code></pre><h3 id="with-headers">With headers</h3>
+<pre tabindex="0"><code>req, _ := http.NewRequest(&#34;GET&#34;, &#34;https://www.example.com&#34;, nil)
+req.Header.Set(&#34;X-Api-Key&#34;, &#34;mykey&#34;)
+res, err := http.DefaultClient.Do(req)
+if err != nil {
+    panic(err)
+}
+
+// Do something with the response
+</code></pre><h3 id="with-query-params">With query params</h3>
+<pre tabindex="0"><code>params := url.Values{
+    &#34;yourparam1&#34;: {&#34;yourparamvalue1&#34;},
+    &#34;yourparam2&#34;: {&#34;yourparamvalue2&#34;},
+}
+
+req, _ := http.NewRequest(&#34;GET&#34;, &#34;https://www.example.com&#34; + params.Encode(), nil)
+res, err := http.DefaultClient.Do(req)
+if err != nil {
+    panic(err)
+}
+
+// Do something with the response
+</code></pre><h3 id="parse-json-response-body">Parse JSON Response Body</h3>
+<pre tabindex="0"><code>
+type Res struct {
+    Foo string
+    Bar string
+}
+
+res, err := http.Get(&#34;https://www.example.com&#34;)
+if err != nil {
+    panic(err)
+}
+
+b, err := io.ReadAll(res.Body)
+if err != nil {
+    panic(err)
+}
+
+var r Res
+
+// Reads b []byte into r Res
+if err := json.Unmarshal(b, &amp;r); err != nil {
+    panic(err)
+}
+</code></pre><h2 id="type-conversion">Type conversion</h2>
+<h3 id="string---t-int-float-bool">string &lt;-&gt; T (int, float, bool)</h3>
+<p>See <a href="https://pkg.go.dev/strconv#Atoi">strconv package</a></p>
+
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+		<footer>
+	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
+</body>
+
+</html>

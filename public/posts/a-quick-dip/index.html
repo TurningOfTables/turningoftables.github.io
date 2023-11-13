@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<title>A Quick Dip Into Svelte</title>
+	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
+	<main>
+		<article>
+			<h1 class="post-title">A Quick Dip Into Svelte</h1>
+			<time datetime="2023-09">09.2023</time>
+			<div>
+				<p>I&rsquo;ve been meaning to try making something using Svelte about fourteen times now</p>
+<p>, but never quite had any inspiration on exactly what to make. Thankfully
+a friend of mine helped out; he wanted a way to track the holiday he booked from work, and found the provided tool hard to use.</p>
+<p>After around 4 total days of work time, I had an application using Svelte, SvelteKit and TailwindCSS with the following features:</p>
+<ul>
+<li>Registration, with user password bcrypt encrypted</li>
+<li>Login/logout</li>
+<li>Set and display used and total amount of annual allowance</li>
+<li>Add, display and delete holidays</li>
+<li>Add, display and delete excluded holiday periods</li>
+<li>Historical holidays are marked to indicate they have already been taken</li>
+<li>Calculate days used as business days, ignoring weekends</li>
+<li>Validation prevents overlapping holidays or excluded holiday periods, holidays which end before they start etc.</li>
+<li>Data storage in SQLite DB</li>
+<li>Basic browser tests with Playwright</li>
+<li>Unit tests for date utils using Vitest</li>
+</ul>
+<h3 id="how-was-it">How Was It?</h3>
+<p>Initially it was a little bit strange having to confirm to quite an opinionated structure for the project in SvelteKit. Using the <code>+page</code> file naming took a while to get used to, but as I progressed and was adding more features
+into the structure already created, it started to become quite natural. I don&rsquo;t know if this is strictly the best way to think about it, but mentally <code>+page.svelte</code> became a view to me, and <code>+page.server.js</code> effectively became a controller.</p>
+<p>Structurally, common actions like adding a new button to interact with my SQLite data store, displaying data back into the user&rsquo;s page, applying my own logic or conversions to that data, even adding authentication were relatively simple within SvelteKit. I was able to put the code
+in a place that felt right, and pass data between different concerns with confidence.</p>
+<p>Svelte itself does a good job of allowing you not to worry too much about keeping the DOM up to date, and inserting basic logic into what to display. I found passing props around and understanding what data was available where to be much simpler than with React, and the lifecycles of a component were less of a worry, as was state management. Some of the syntax feels a little bit strange (<code>$: yourVariable</code> for example), but the tutorial explains it well and it quickly becomes second nature. Despite bouncing off React a few times, I found
+I was able to get into Svelte more easily, produce what I wanted, and not fight the tech but work with it.</p>
+<p>Overall it was a good experience, and when I look at the features that I was able to implement in less than a full work week it&rsquo;s clear that it was a very productive set of tools to work with.</p>
+<h3 id="would-you-do-it-again">Would you do it again?</h3>
+<p>Maybe! I have to say that my main reservation was not to do with Svelte, SvelteKit or TailwindCSS. It was that I missed writing code in Go. JavaScript felt a little bit vague and uncertain by comparison, and I missed having a simple and clear
+set of tools to solve problems with. That being said I did appreciate the JS ecosystem when working with things like dates (using <code>date-fns</code>), which made some quite fiddly checks for different date-related things much easier.</p>
+<p>To be honest I&rsquo;ve missed Go though so I&rsquo;m going back to that next. I&rsquo;ve been linked a good looking framework called beego that definitely seems worth a look</p>
+<h3 id="references--further-reading">References / Further Reading</h3>
+<ul>
+<li><a href="https://svelte.dev/">Svelte</a></li>
+<li><a href="https://kit.svelte.dev/">SvelteKit</a></li>
+<li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+<li><a href="https://github.com/beego/beego">beego</a></li>
+</ul>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+		<footer>
+	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
+</body>
+
+</html>

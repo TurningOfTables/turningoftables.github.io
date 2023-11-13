@@ -1,13 +1,30 @@
 body {
     text-align: center;
-    font-family: 'Courier New', monospace;
-    max-width: 50%;
-    margin: auto;
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
-header { 
-    font-size: 2rem;
-    font-weight: bolder
+div.container {
+    margin: auto;
+    max-width: 640px;
+}
+
+header {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 50px;
+}
+
+h1.post-title {
+    font-size: 1.5rem;
+}
+
+h1.ref-title {
+    font-size: 2.5rem;
 }
 
 footer {
@@ -16,9 +33,36 @@ footer {
 }
 
 article {
-    text-align: justify
+    text-align: left
 }
 
 #back-link {
     font-size: 2rem;
+}
+
+nav {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+pre {
+    padding: 10px;
+    background-color: rgba(202, 202, 202, 0.336);
+    font-size: 1rem;
+    overflow-x: scroll;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a#scroll-to-top-link {
+    position: fixed;
+    right: 5%;
+    bottom: 2%;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: 5px
 }

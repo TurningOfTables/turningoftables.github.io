@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
 	<title>In Aviation</title>
-	<meta name="description" content="Miscellaneous thoughts on testing and software development">
 	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
 	<link rel="stylesheet" href="/css/style.css">
-	
-</head>
-<body>
-	<header>
-	<a href="https://turningoftables.github.io/">Turning of Tables</a>
-	
-</header>
 
 	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
 	<main>
 		<article>
-			<h1>In Aviation</h1>
+			<h1 class="post-title">In Aviation</h1>
 			<time datetime="2023-01">01.2023</time>
 			<div>
 				<p>An important lesson that has been learned in safety critical environments such as aviation over decades of flying and - sadly - numerous accidents, is that one layer of safety is not enough.</p>
@@ -27,35 +56,37 @@
 <p>When an air traffic controller gives an instruction, the pilot reads back critical parts of it to confirm it has been received and understood correctly. When an important setting is changed in the cockpit, the pilot monitoring will cross-check and often read back the change to confirm it is as expected.</p>
 <p>This idea extends backwards through all the hardware and software on a plane, with extensive testing and redundancy adding further layers before the pilot may even encounter it during a flight.</p>
 <p>Layers upon layers add up and the result is an incredibly safe form of transport where only the most bizarre and convoluted series of events can result in anything approaching a fatal incident. Sometimes this is referred to as the Swiss Cheese Model.</p>
-<h2 id="how-we-can-apply-its-lessons">How We Can Apply Its Lessons</h2>
+<h3 id="how-we-can-apply-its-lessons">How We Can Apply Its Lessons</h3>
 <p>In an everyday software environment we can use some of the same ideas.</p>
 <p>Traditionally you might have a developer write code and pass the resulting software over to a tester who is then responsible for finding all the bugs before release.</p>
 <p>Unfortunately that leaves us with just one layer, and so it only takes a single failure to result in defects going unnoticed. Instead, think how you can build up your own system of layers to make it ever more difficult for issues to pass through the process unchecked.</p>
-<h3 id="people">People</h3>
+<h4 id="people">People</h4>
 <p>By building a culture where quality is the responsibility of everybody in the process, you add in layers of people with different specialisms and different perspectives who are always looking for potential pitfalls. From your product owner, through your designs, as part of the engineering and of course when testers become involved - if everybody is thinking quality then the opportunities to spot problems increase dramatically. Product owners can help test and verify they are getting what they expect, designers can create robust designs which account for unexpected user behaviour, developers can carry out careful code reviews and - perhaps most importantly - run their own code to check it works before considering it ready for testing.</p>
 <p>Every single person involved needs a quality mindset, not just your test team.</p>
-<h3 id="tools">Tools</h3>
+<h4 id="tools">Tools</h4>
 <p>Then, you add tooling to give you even more layers! Developers can make good use of unit tests, functional tests and static code analysis. When part of the build pipeline these can stop many potential issues before the software is even deployed for testing.</p>
 <p>Testers can supplement their role with effective and reliable automated functional, system or integration checks, and production monitoring and testing tools can help to find or prevent issues encountered at deployment.</p>
 <p>Adding these tools acts as a &lsquo;force multiplier&rsquo;, enabling you to cover a lot of ground on simple checks very quickly and freeing your testers to focus on more complex, creative or exploratory testing.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h3 id="conclusion">Conclusion</h3>
 <p>Layers. Build up as many layers of both people and technology working to improve quality within your team as you can.</p>
 <p>By doing this you make it harder and harder for unknown defects to reach production, the software development process is smoother and more predictable. Most importantly - quality increases.</p>
-<h2 id="references--further-reading">References / Further Reading</h2>
+<h3 id="references--further-reading">References / Further Reading</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Swiss_cheese_model">Wikipedia - Swiss Cheese Model</a></li>
 <li><a href="https://admiralcloudberg.medium.com/">Admiral Cloudberg - Amazing articles on aviation accidents and safety</a></li>
 </ul>
-
 			</div>
 			
 			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
 		</article>
 	</main>
 
-	<footer>
+		<footer>
 	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
 </footer>
 
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
 </body>
+
 </html>
