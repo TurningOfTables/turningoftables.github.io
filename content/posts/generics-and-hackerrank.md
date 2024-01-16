@@ -1,5 +1,5 @@
 ---
-title: "Generics and Hackerrank"
+title: "Generics and HackerRank"
 date: 2024-01-16T09:49:05Z
 draft: false
 icon: ⬆️
