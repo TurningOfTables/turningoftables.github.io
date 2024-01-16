@@ -64,6 +64,7 @@ A quick set of memory prompts for common patterns in Go. To avoid repetition the
   - [Parse JSON Response Body](#parse-json-response-body)
 - [Type conversion](#type-conversion)
   - [string \<-\> T (int, float, bool)](#string---t-int-float-bool)
+- [Generics](#generics)
 
 
 ## For Loops
@@ -620,3 +621,25 @@ if err := json.Unmarshal(b, &r); err != nil {
 
 See [strconv package](https://pkg.go.dev/strconv#Atoi)
 
+## Generics
+
+```
+// Create an interface with a union type to be your constraint
+
+type Number interface {
+    int64 | float64
+}
+
+// Create your function with a type parameter using your type constraint from above
+
+function sumAllNumbers[K comparable V Number](m map[K]V) V {
+    var s V
+    for _, v := range v {
+        s += v
+    }
+    return s
+}
+
+```
+
+Note that you must be able to perform all actions on all allowed types for code to compile.
