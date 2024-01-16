@@ -1,7 +1,7 @@
 ---
 title: "Generics and Hackerrank"
 date: 2024-01-16T09:49:05Z
-draft: true
+draft: false
 icon: ⬆️
 ---
 
