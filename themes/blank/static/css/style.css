@@ -47,9 +47,19 @@ nav {
 
 pre {
     padding: 10px;
-    background-color: rgba(202, 202, 202, 0.336);
+    background-color: black;
     font-size: 1rem;
     overflow-x: scroll;
+    code {
+        white-space: pre;
+    }
+}
+
+code {
+    white-space: nowrap;
+    font-size: 1rem;
+    background-color: black;
+    color: greenyellow
 }
 
 html {
