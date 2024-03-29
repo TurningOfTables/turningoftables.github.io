@@ -101,7 +101,11 @@ func TestGetMeTheTime(t *testing.T) {
 
 So my terrible diagram with more specific names could now look like this:
 
-`TestGetMeTheTime <-> GetMeTheTime(passing a mock that implements the expected interface param) <-> MockTime's version of Get() is called, which always returns a static time that we can test for`
+```
+TestGetMeTheTime <-> 
+GetMeTheTime(passing a mock that implements the expected interface param) <-> 
+MockTime's version of Get() is called, which always returns a static time that we can test for
+```
 
 This is an extremely bare bones implementation as I experiment with the idea and make it go into my brain, but hopefully it gets the pattern across reasonably well. 
 
