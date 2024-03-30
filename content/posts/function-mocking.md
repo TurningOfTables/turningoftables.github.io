@@ -7,7 +7,7 @@ icon: 😆
 
 A little exploration of small scale function mocking for Go testing<!--more-->
 
-Function mocking is an area I hasn't really dipped into very much until recently. My main mocking experience has been verbal and network based, using tools like [Charles](https://www.charlesproxy.com/), [Mountebank](http://www.mbtest.org/) and the like.
+Function mocking is an area I hadn't really dipped into very much until recently. My main mocking experience has been verbal and network based, using tools like [Charles](https://www.charlesproxy.com/), [Mountebank](http://www.mbtest.org/) and the like.
 
 The concept is similar of course, except instead of mocking network responses or requests you're mocking functions.
 
