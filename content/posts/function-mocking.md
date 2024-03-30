@@ -13,7 +13,7 @@ The concept is similar of course, except instead of mocking network responses or
 
 What took a little bit of thinking through was where the mocks actually need to 'be'. Like network mocks (mostly), you don't really want to call your mocks directly from the tests, because that doesn't prove anything. You set up mocks and then call the function under test. The function under test then makes onward calls which is where the mocks get hit.
 
-Here is is represented badly with arrows: `Test <-> function under test <-> mocked function calls`
+Here it is represented badly with arrows: `Test <-> function under test <-> mocked function calls`
 
 Your test then asserts that it gets the expected result and, as a bonus with many mocking libraries available, you can assert that the expected function calls were carried out to your mocks.
 
