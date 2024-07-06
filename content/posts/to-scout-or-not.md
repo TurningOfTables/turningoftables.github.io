@@ -1,7 +1,7 @@
 ---
 title: "The Boy Scout Rule, Or Not"
 date: 2024-06-08T09:32:08+01:00
-draft: true
+draft: false
 icon: 😇
 ---
 
