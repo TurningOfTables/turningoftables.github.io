@@ -147,6 +147,7 @@
 <li><a href="#string---t-int-float-bool">string &lt;-&gt; T (int, float, bool)</a></li>
 </ul>
 </li>
+<li><a href="#generics">Generics</a></li>
 </ul>
 <h2 id="for-loops">For Loops</h2>
 <hr>
@@ -520,6 +521,23 @@ if err := json.Unmarshal(b, &amp;r); err != nil {
 </code></pre><h2 id="type-conversion">Type conversion</h2>
 <h3 id="string---t-int-float-bool">string &lt;-&gt; T (int, float, bool)</h3>
 <p>See <a href="https://pkg.go.dev/strconv#Atoi">strconv package</a></p>
+<h2 id="generics">Generics</h2>
+<pre tabindex="0"><code>// Create an interface with a union type to be your constraint
+
+type Number interface {
+    int64 | float64
+}
+
+// Create your function with a type parameter using your type constraint from above
+
+function sumAllNumbers[K comparable V Number](m map[K]V) V {
+    var s V
+    for _, v := range v {
+        s += v
+    }
+    return s
+}
+</code></pre><p>Note that you must be able to perform all actions on all allowed types for code to compile.</p>
 
 			</div>
 			
@@ -528,7 +546,7 @@ if err := json.Unmarshal(b, &amp;r); err != nil {
 	</main>
 
 		<footer>
-	<p>&copy; 2023 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+	<p>&copy; 2024 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
 </footer>
 
 		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>

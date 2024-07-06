@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<title>So Many Projects #1 - Wires</title>
+	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
+	<main>
+		<article>
+			<h1 class="post-title">So Many Projects #1 - Wires</h1>
+			<time datetime="2023-11">11.2023</time>
+			<div>
+				<p>Working further with Go, and creating a microblog.</p>
+<p>I realised I hadn&rsquo;t posted an update in a while, and even if nobody reads these then it&rsquo;s nice for me to have a record of what I&rsquo;ve been doing.</p>
+<p>I now have about &hellip; 14 Go projects on Github, and I haven&rsquo;t actually given a rundown of more than a couple - what each one does and the area
+that it helped me to learn. I&rsquo;ve been a bit sidetracked by life (and a nice holiday!) recently but wanted to get these down before the end of
+the year.</p>
+<p>I won&rsquo;t go heavily into the code here, and a few aren&rsquo;t really tidy enough to make public yet, but you should get an overall impression of
+what functionality each one has.</p>
+<h3 id="wires">Wires</h3>
+<h4 id="functionality">Functionality</h4>
+<p>Wires is a microblog built with <a href="https://gofiber.io/">Fiber</a> and <a href="https://gorm.io/">Gorm ORM</a>. At this point I&rsquo;m relatively used to Fiber and continue to find it a nice solution for
+apps which need a tiny bit more than fairly simple routing, which the <a href="https://pkg.go.dev/net/http">Go net/http package</a> provides.</p>
+<p>You can register, log in, log out, post, view other people&rsquo;s lists of posts, change your password, delete your account and switch between profile pictures.</p>
+<h3 id="db-and-orms">DB and ORMs</h3>
+<p>Wires is backed by my usual simple SQLite database, although of course in a real use case you&rsquo;d certainly want to change this to Postgres or similar.</p>
+<p>Gorm and other ORMs I find myself falling in and out of love with, sometimes within the same day. On the one hand it&rsquo;s nice to have a programmatic
+way of building up SQL (and might have saved me from a typo in another project&rsquo;s raw SQL which took me an hour to find), and coupling structs to
+database models without having to update the SQL makes iterating quite a bit easier. No need to handle migrations and such. On the other hand it does
+make me feel as though I&rsquo;m spending time learning an ORM rather than adding functionality by just writing SQL, and potentially adds in
+another layer of complexity or source of issues to debug. Overall my feeling is that if you use an ORM, you have to adopt it wholeheartedly and couple
+it tightly to your project. You have to take the leap, use it early on and see the benefits as your project grows in size.</p>
+<p>One of the parts I learned from in this project was implementing a notion of authenticated and unauthenticated pages - or some that were partially authenticated like viewing a user&rsquo;s
+list of posts. In this latter instance I wanted anybody to be able to view a user&rsquo;s posts, but only that user to get the form to add another post (and ensure you couldn&rsquo;t
+just post directly to the API anyway). Mostly this was a logic problem, as well as a few forays into Fiber&rsquo;s <a href="https://docs.gofiber.io/api/ctx/#locals">Locals</a> which
+were particularly handy here, using bcrypt to hash and verify passwords.</p>
+<p>While there are some optimisations I can make to the number of DB calls, overall I&rsquo;m reasonably happy with this as a first pass.</p>
+<h3 id="the-front-end">The Front End</h3>
+<p>In this case I didn&rsquo;t use any specific front end framework or solution, and instead opted to use the templating provided by Fiber (which is identical to the
+text templating in Go). While this was a little bit of a throwback to my Ruby on Rails days in some ways when using partials, once you tear your
+mind away from the component patterns of modern JavaScript apps it&rsquo;s a perfectly effective way of building an app. Plus I always have an innate bias for using
+core functionality where I can, in preference to additional dependencies on third party libraries.</p>
+<p>Front end testing is implemented via a series of Playwright tests alongside the project, and basic styling is added via Bootstrap.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Although the idea behind the project (microblog) wasn&rsquo;t exactly revolutionary, it served the purpose of allowing me to venture further into some more complex
+authentication and routing scenarios, as well as some heavier use of templating and thinking carefully about the logic and passing data around a web app more
+effectively.</p>
+<p>Developing this project further would likely involve the following:</p>
+<ol>
+<li>Email rather than username signup, requiring integration with an SMTP service or external auth/SSO handler.</li>
+<li>Optimisations in how many database calls are made for authentication, as these could eventually cause heavy load.</li>
+<li>Switching to a non-file-based database solution for better performance at scale.</li>
+<li>The ability to customise your own &lsquo;Home&rsquo; page with people you follow, and of course allow blocking of user content.</li>
+<li>Ability to upload your own profile picture.</li>
+</ol>
+<h3 id="screenshots">Screenshots</h3>
+<p><img src="/wires_1.png" alt="Wires Profile Page" title="Wires Profile Page">
+<img src="/wires_2.png" alt="Wires Home Page" title="Wires Home Page"></p>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+		<footer>
+	<p>&copy; 2024 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
+</body>
+
+</html>

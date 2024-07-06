@@ -6,123 +6,126 @@
     <description>Recent content in Posts on Turning of Tables</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2023 12:18:56 +0000</lastBuildDate><atom:link href="https://turningoftables.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Mar 2024 09:43:12 +0000</lastBuildDate>
+    <atom:link href="https://turningoftables.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extremely Basic Function Mocking</title>
+      <link>https://turningoftables.github.io/posts/function-mocking/</link>
+      <pubDate>Fri, 29 Mar 2024 09:43:12 +0000</pubDate>
+      <guid>https://turningoftables.github.io/posts/function-mocking/</guid>
+      <description>&lt;p&gt;A little exploration of small scale function mocking for Go testing&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Useful Go Concurrency Pattern - WaitGroups and Buffered Channels</title>
+      <link>https://turningoftables.github.io/posts/useful-concurrency-patterns/</link>
+      <pubDate>Thu, 25 Jan 2024 15:33:27 +0000</pubDate>
+      <guid>https://turningoftables.github.io/posts/useful-concurrency-patterns/</guid>
+      <description>While improving my knowledge of how Go implements concurrency, and various ways of handling it, I came across some useful common patterns which I found helpful as a baseline to build in.&#xA;I split my requirements for concurrency into two parts:</description>
+    </item>
+    <item>
+      <title>Generics and HackerRank</title>
+      <link>https://turningoftables.github.io/posts/generics-and-hackerrank/</link>
+      <pubDate>Tue, 16 Jan 2024 09:49:05 +0000</pubDate>
+      <guid>https://turningoftables.github.io/posts/generics-and-hackerrank/</guid>
+      <description>&lt;p&gt;A recent Go addition, and a new area of learning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>So Many Projects #1 - Wires</title>
+      <link>https://turningoftables.github.io/posts/so-many-projects/</link>
+      <pubDate>Mon, 13 Nov 2023 09:25:55 +0000</pubDate>
+      <guid>https://turningoftables.github.io/posts/so-many-projects/</guid>
+      <description>&lt;p&gt;Working further with Go, and creating a microblog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Quick Dip Into Svelte</title>
       <link>https://turningoftables.github.io/posts/a-quick-dip/</link>
       <pubDate>Wed, 27 Sep 2023 12:18:56 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/a-quick-dip/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been meaning to try making something using Svelte about fourteen times now&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Planespotting</title>
       <link>https://turningoftables.github.io/posts/planespotting/</link>
       <pubDate>Wed, 13 Sep 2023 10:53:13 +0100</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/planespotting/</guid>
       <description>&lt;p&gt;A Go app to show nearby planes&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Something Different - Intermission</title>
       <link>https://turningoftables.github.io/posts/doing-something-different-intermission/</link>
       <pubDate>Tue, 29 Aug 2023 14:38:57 +0100</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/doing-something-different-intermission/</guid>
       <description>&lt;p&gt;A brief diversion to talk about confidence and Impostor Syndrome&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Something Different #3 - Go</title>
       <link>https://turningoftables.github.io/posts/doing-something-different-3/</link>
       <pubDate>Tue, 15 Aug 2023 09:09:12 +0100</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/doing-something-different-3/</guid>
       <description>&lt;p&gt;The second thing I did, was learn to code in Go&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Something Different #2 - Games</title>
       <link>https://turningoftables.github.io/posts/doing-something-different-2/</link>
       <pubDate>Mon, 14 Aug 2023 14:05:18 +0100</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/doing-something-different-2/</guid>
       <description>&lt;p&gt;The first thing I tried, was learning how to make games&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Something Different #1 - Needing a Change</title>
       <link>https://turningoftables.github.io/posts/doing-something-different/</link>
       <pubDate>Wed, 09 Aug 2023 09:54:37 +0100</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/doing-something-different/</guid>
       <description>&lt;p&gt;A little earlier this year I decided that I wanted to try something different.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Beware Becoming The Hero</title>
       <link>https://turningoftables.github.io/posts/beware-becoming-the-hero/</link>
       <pubDate>Mon, 01 May 2023 20:12:18 +0100</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/beware-becoming-the-hero/</guid>
       <description>&lt;p&gt;Ah, the hero. The gallant, the brave, the ever-present and ever-helpful champion of many a software venture. But beware of what lies just beneath the surface.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>The dangers of overplaying the edge case card</title>
       <link>https://turningoftables.github.io/posts/edge-case-dangers/</link>
       <pubDate>Sun, 19 Feb 2023 16:38:18 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/edge-case-dangers/</guid>
       <description>&lt;p&gt;Making lots of small decisions that are suboptimal but only affect a small amount of your user base is deceptively damaging over time.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>In Aviation</title>
       <link>https://turningoftables.github.io/posts/aviation/</link>
       <pubDate>Sat, 21 Jan 2023 12:18:56 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/aviation/</guid>
       <description>&lt;p&gt;An important lesson that has been learned in safety critical environments such as aviation over decades of flying and - sadly - numerous accidents, is that one layer of safety is not enough.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Choosing an Automated Test Framework</title>
       <link>https://turningoftables.github.io/posts/choosing-an-automated-test-framework/</link>
       <pubDate>Sun, 01 Jan 2023 13:08:48 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/choosing-an-automated-test-framework/</guid>
       <description>&lt;p&gt;When deciding on a framework or tool for automation, there are a dizzying array of possibilities. There are certainly no right and wrong answers - but an outline of what to consider might look like this.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Make Everyone a Tester</title>
       <link>https://turningoftables.github.io/posts/make-everyone-a-tester/</link>
       <pubDate>Fri, 23 Dec 2022 19:57:06 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/make-everyone-a-tester/</guid>
       <description>&lt;p&gt;One of the most damaging elements of traditional software development culture has been a strict allocation of duties between disciplines.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Boring Testers</title>
       <link>https://turningoftables.github.io/posts/boring-testers/</link>
       <pubDate>Fri, 23 Dec 2022 19:20:44 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/boring-testers/</guid>
       <description>&lt;p&gt;Testing really doesn&amp;rsquo;t have to be boring. There is a certain subset of testers that just make me want to quit testing though.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Test Automation Is Not Magic</title>
       <link>https://turningoftables.github.io/posts/test-automation-is-not-magic/</link>
       <pubDate>Fri, 23 Dec 2022 19:20:13 +0000</pubDate>
-      
       <guid>https://turningoftables.github.io/posts/test-automation-is-not-magic/</guid>
       <description>&lt;p&gt;Over the years as I&amp;rsquo;ve been a part of numerous web development projects which lack test automation. A recurring theme is the idea that test automation is magic. It isn&amp;rsquo;t.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

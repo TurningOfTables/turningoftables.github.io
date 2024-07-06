@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<title>Extremely Basic Function Mocking</title>
+	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
+	<main>
+		<article>
+			<h1 class="post-title">Extremely Basic Function Mocking</h1>
+			<time datetime="2024-03">03.2024</time>
+			<div>
+				<p>A little exploration of small scale function mocking for Go testing</p>
+<p>Function mocking is an area I hadn&rsquo;t really dipped into very much until recently. My main mocking experience has been verbal and network based, using tools like <a href="https://www.charlesproxy.com/">Charles</a>, <a href="http://www.mbtest.org/">Mountebank</a> and the like.</p>
+<p>The concept is similar of course, except instead of mocking network responses or requests you&rsquo;re mocking functions.</p>
+<p>What took a little bit of thinking through was where the mocks actually need to &lsquo;be&rsquo;. Like network mocks (mostly), you don&rsquo;t really want to call your mocks directly from the tests, because that doesn&rsquo;t prove anything. You set up mocks and then call the function under test. The function under test then makes onward calls which is where the mocks get hit.</p>
+<p>Here it is represented badly with arrows: <code>Test &lt;-&gt; function under test &lt;-&gt; mocked function calls</code></p>
+<p>Your test then asserts that it gets the expected result and, as a bonus with many mocking libraries available, you can assert that the expected function calls were carried out to your mocks.</p>
+<p>Where this comes together really nicely in Go is with interfaces. Because interfaces in Go are implicitly satisfied when a type implements all the methods defined by an interface, it&rsquo;s easy to &lsquo;slide in&rsquo; your mock functions instead of the real thing during test setup.</p>
+<p>Let&rsquo;s say you have the following very contrived example:</p>
+<pre tabindex="0"><code>// main.go
+package main
+
+import &#34;time&#34;
+
+type TimeHelper interface {
+	Get() string
+}
+
+type Time struct{}
+
+func (l *Time) Get() string {
+	t := time.Now().String()
+	return t
+}
+</code></pre><p>Pretty simple. A type of Time with a method of Get() that returns the current time. This satisfies the interface TimeHelper.</p>
+<p>You have the below code which creates an instance of Time and calls your function &lsquo;getMeTheTime&rsquo;:</p>
+<pre tabindex="0"><code>// time.go
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+func main() {
+	res := GetMeTheTime(&amp;Time{})
+	fmt.Println(res)
+}
+
+func GetMeTheTime(sh TimeHelper) string {
+	return sh.Get()
+}
+</code></pre><p>If you create a regular test, you&rsquo;ll always get back a different result depending on what time it is, which is a pain to test for. Instead, we can create a mock type which satisfies the TimeHelper interface, but with a Get method that always returns whatever you give it</p>
+<pre tabindex="0"><code>// time_mock.go
+package main
+
+type MockTime struct{}
+
+// Always returns what is provided as a string
+func (ml *MockTime) Get(input string) string {
+	return input
+}
+</code></pre><p>Then in our test, we can write the following:</p>
+<pre tabindex="0"><code>// main_test.go
+
+package main
+
+import (
+	&#34;testing&#34;
+)
+
+func TestGetMeTheTime(t *testing.T) {
+	mock := MockTime{}
+	expected := &#34;2000-01-01 01:01:01.000000001 +0000 UTC&#34;
+
+	res := GetMeTheTime(&amp;mock)
+
+	if res != expected {
+		t.Errorf(&#34;expected: %v, got: %v&#34;, expected, res)
+	}
+}
+</code></pre><p>So my terrible diagram with more specific names could now look like this:</p>
+<pre tabindex="0"><code>TestGetMeTheTime &lt;-&gt; 
+GetMeTheTime(passing a mock that implements the expected interface param) &lt;-&gt; 
+MockTime&#39;s version of Get() is called, which always returns a static time that we can test for
+</code></pre><p>This is an extremely bare bones implementation as I experiment with the idea and make it go into my brain, but hopefully it gets the pattern across reasonably well.</p>
+<p>Creating mocks at a larger scale would likely benefit from the use of a library for generating reliable mock methods and allow asserting that method calls were actually made. It&rsquo;s beyond the scope of this post but very popular are several libraries which will generate sets of mock methods for a given interface. Two I&rsquo;ve come across so far are <a href="https://github.com/vektra/mockery">mockery</a> and Uber&rsquo;s <a href="https://github.com/uber-go/mock">mock</a> which is a fork of the original <a href="https://github.com/golang/mock">mock</a>, now archived.</p>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+		<footer>
+	<p>&copy; 2024 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
+</body>
+
+</html>

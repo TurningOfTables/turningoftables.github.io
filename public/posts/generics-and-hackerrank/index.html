@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<title>Generics and HackerRank</title>
+	
+	<meta name="description" content="Miscellaneous thoughts on software development and testing">
+	
+
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	
+</head>
+
+<body>
+	<div class="container">
+		<div id="scroll-to-top-target"></div>
+		<header>
+	Turning of Tables
+	
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/goref/">Go Quick Reference</a>
+		
+	</nav>
+	
+</header>
+		
+	<main>
+		<article>
+			<h1 class="post-title">Generics and HackerRank</h1>
+			<time datetime="2024-01">01.2024</time>
+			<div>
+				<p>A recent Go addition, and a new area of learning</p>
+<p>Coming from mostly loosely typed languages like JavaScript, the concept and usefulness of generics was a little bit new to me. I&rsquo;d seen numerous older posts and answers decrying the lack of generics in Go, and also learned that they were now a feature of the language. In the first part of the post I use the go.dev site&rsquo;s examples and explanation to walk through how I understand them.</p>
+<p>Alongside this, I&rsquo;ve changed the type of learning I&rsquo;ve been doing again and been exploring HackerRank - a site that presents various code challenges and checks your solutions, which then earn you points and ranks. In the second part of the post I talk about how I&rsquo;ve found it, what I think has been useful, and what is perhaps not so relevant.</p>
+<h3 id="generics">Generics</h3>
+<p>With strongly typed languages, it&rsquo;s common to run into a scenario where you want to apply the same change to two different types.</p>
+<p>The example used by go.dev is that of having two maps. One a <code>map[string]int64</code> and the other a <code>map[string]float64</code>. Normally when you want to perform the same action on two different types - such as adding together all the values - you likely have to write two different functions. One to sum a <code>map[string]int64</code> and the other to sum a <code>map[string]float64</code>.</p>
+<p>Naturally this leads to a bit of code duplication, as the body of each function is essentially the same and only the function signature changes to reflect the different types.</p>
+<p>With generics it&rsquo;s possible to write one &lsquo;generic&rsquo; function that allows you to sum either type.</p>
+<p>I&rsquo;m going to skip the first iteration of how to implement these from the docs as I find the last solution much tidier and extendable.</p>
+<p>In our case we want our function to allow either <code>int64</code> or <code>float64</code>. You can create an interface to act as your constraint like so:</p>
+<pre tabindex="0"><code>type Number interface {
+    int64 | float64
+}
+</code></pre><p>You can then create a function like this which sums anything that follows the constraint of <code>Number</code> (example taken from go.dev)</p>
+<pre tabindex="0"><code>func SumNumbers[K comparable, V Number](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+</code></pre><p>I won&rsquo;t go into this in too much more depth here, because the actual doc pages on it already explain it well, but this gives a quick idea of what generics do, the problems they solve and how they&rsquo;re constructed. For further reading I encourage you to check out <a href="https://go.dev/doc/tutorial/generics">the full post on go.dev</a></p>
+<h3 id="hackerrank">HackerRank</h3>
+<p>As I&rsquo;ve been learning, my pattern of coding has generally gravitated towards writing with a particular purpose in mind. Whether that&rsquo;s spotting planes, creating a micro-blogging site, or knowing when my bins are being collected. Overall I am in favour of this type of learning and coding, because it reminds us that (usually) coding is to solve a problem.</p>
+<p>Alongside this though, it can be difficult to find time to practice coding skills without setting out a long period of time in which to bootstrap a project and do a lot of building before even getting to learn something new. This is where I&rsquo;ve found HackerRank (and similar tools) to be a useful aid.</p>
+<p>The general idea is that you are presented with a code challenge - often to write just a single function which, when tested, gives the expected outputs for the test inputs. It leads to a slightly different way of thinking in that the overall goal of the project matters less, and instead it polishes your skills at manipulating data, performing mathematical operations, and often iterating on your function to improve performance.</p>
+<p>So what have I learned from this that I didn&rsquo;t pick up from fuller project creation? It&rsquo;s a good question. I think it forces you to focus in on smaller units of code, and perhaps most of all hones logical thinking approaches to coding. I find I&rsquo;m getting better at following through algorithms and in taking a given task and turning it into code.</p>
+<p>Would I recommend it to other people learning to code? Yes, but not to the exclusion of other types of learning. It skews towards the maths and computer science side of coding which is fine, but it perhaps takes you away from the &rsquo;engineering&rsquo; thought process of organising and fitting together larger pieces of code into functioning products that solve a given problem or set of problems.</p>
+<p>Come on, surely I can think of a simile than that to sound like I know what I&rsquo;m talking about.</p>
+<p><em>&ldquo;Think of it like taking swings in a batting cage as opposed to playing in a match&rdquo;</em></p>
+<p>There. That&rsquo;ll have to do. Give it a go at <a href="https://www.hackerrank.com">HackerRank</a></p>
+			</div>
+			
+			<a id='back-link' href="https://turningoftables.github.io/">&lt;</a>
+		</article>
+	</main>
+
+		<footer>
+	<p>&copy; 2024 <a href="https://turningoftables.github.io/">Turning of Tables</a></p>
+</footer>
+
+		<a id="scroll-to-top-link" href="#scroll-to-top-target"><img src="/scroll-to-top.svg"><br>Top</a>
+	</div>
+</body>
+
+</html>
