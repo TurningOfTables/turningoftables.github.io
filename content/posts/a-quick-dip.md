@@ -24,7 +24,7 @@ After around 4 total days of work time, I had an application using Svelte, Svelt
 
 ### How Was It?
 
-Initially it was a little bit strange having to confirm to quite an opinionated structure for the project in SvelteKit. Using the `+page` file naming took a while to get used to, but as I progressed and was adding more features
+Initially it was a little bit strange having to conform to quite an opinionated structure for the project in SvelteKit. Using the `+page` file naming took a while to get used to, but as I progressed and was adding more features
 into the structure already created, it started to become quite natural. I don't know if this is strictly the best way to think about it, but mentally `+page.svelte` became a view to me, and `+page.server.js` effectively became a controller.
 
 Structurally, common actions like adding a new button to interact with my SQLite data store, displaying data back into the user's page, applying my own logic or conversions to that data, even adding authentication were relatively simple within SvelteKit. I was able to put the code
