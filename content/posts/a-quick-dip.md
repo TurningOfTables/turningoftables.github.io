@@ -33,7 +33,7 @@ in a place that felt right, and pass data between different concerns with confid
 Svelte itself does a good job of allowing you not to worry too much about keeping the DOM up to date, and inserting basic logic into what to display. I found passing props around and understanding what data was available where to be much simpler than with React, and the lifecycles of a component were less of a worry, as was state management. Some of the syntax feels a little bit strange (`$: yourVariable` for example), but the tutorial explains it well and it quickly becomes second nature. Despite bouncing off React a few times, I found
 I was able to get into Svelte more easily, produce what I wanted, and not fight the tech but work with it.
 
-Overall it was a good experience, and when I look at the features that I was able to implement in less than a full work week it's clear that it was a very productive set of tools to work with.
+Overall it was a good experience, and when I look at the features that I was able to implement in less than a full work week it's clear that it was a productive set of tools to work with.
 
 ### Would you do it again?
 

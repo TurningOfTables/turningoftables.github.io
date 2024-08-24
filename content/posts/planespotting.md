@@ -19,12 +19,12 @@ I had some idea of the basic requirements up front:
 - be able to specify a radius in which you want to be notified about planes
 - send an OS notification when a plane was 'spotted'
 
-As usual, I knew that this was likely to grow a little as I had ideas during development - and it did a little!
+As usual, I knew that this was likely to grow a little as I had ideas during development - and it did.
 
 
 ### Writing, Iterating, Refactoring
 
-After initially writing the basic functionality above without too much trouble, I added on a couple of neat (at least to me!) features. The first was the ability to feed config in from outside the app, so you didn't have to specify it each time and it would be easier to set up for other users. The second was saving 'progress' of some sort - this culminated in a list of the flight numbers and a total of how many planes you've spotted. Keeping a list of flight numbers also prevented the same plane being constantly 'spotted' as it stayed in the area nearby; especially obvious if your location is set at or near an airport.
+After initially writing the basic functionality above without too much trouble, I added on a couple of neat (at least to me) features. The first was the ability to feed config in from outside the app, so you didn't have to specify it each time and it would be easier to set up for other users. The second was saving 'progress' of some sort - this culminated in a list of the flight numbers and a total of how many planes you've spotted. Keeping a list of flight numbers also prevented the same plane being constantly 'spotted' as it stayed in the area nearby; especially obvious if your location is set at or near an airport.
 
 Once I had these in place, I decided the app was getting big enough to need a bit of splitting out. I created sub-folders with packages of 'helpers' for everything outside `main.go`. So I had `helpers/save/save.go` and `helpers/config/config.go` and `helpers/formatters/formatters.go` etc., each with their own tests such as `helpers/save/save_test.go`
 

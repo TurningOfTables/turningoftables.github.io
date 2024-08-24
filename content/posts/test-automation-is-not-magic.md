@@ -25,7 +25,7 @@ If the site has not been built to support automation, expect slow progress and a
 
 ### Does Your Team Know How To Do It?
 
-You need people who can write reliable automation within a reasonable period of time. Respect this as you would any other technical skill, and don't assume it can be picked up effectively in a very short period.
+You need people who can write reliable automation within a reasonable period of time. Respect this as you would any other technical skill, and don't assume it can be picked up effectively in a short period.
 
 A common plan is to train existing manual testers with automated tools. It's tempting as a cost saving measure, and with the right people and enough support this can absolutely work. However it's a lengthy process and requires setting aside time from every day testing duties. The alternative is to hire new staff with automation skills which can take time and be costly.
 

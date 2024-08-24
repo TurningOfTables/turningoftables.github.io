@@ -26,8 +26,7 @@ I think coding and programming in particular are skills that encourage that feel
 
 I will add that I'm not only throwing shade at engineers or tech roles here. I think this goes both ways. In the same way we would expect tech roles to interact with and update work tracking tools so that everyone can see progress, I think there are also lessons to be learned for non-tech roles too. You do not have to become an expert, but it can pay big dividends to have a conceptual understanding of coding. Not only does this allow you to challenge engineering decisions more effectively, but it can also help simply in terms of communication across that imaginary tech/non-tech boundary. Be [T-Shaped](https://en.wikipedia.org/wiki/T-shaped_skills).
 
-My switch of focus from manual to automated testing - now many years ago - and subsequent experience reading the code that actually runs decent size websites, has taught me that coding isn't magic. It can be hard, and has a learning curve, and sometimes requires maths (!),
-but it's also logical once you dare to look. It's sometimes surprising to compare the perception you have of people both before and after you read their actual code, even with my background as an automation tester rather than focussed developer. 
+My switch of focus from manual to automated testing - now many years ago - and subsequent experience reading the code that actually runs decent size websites, has taught me that coding isn't magic. It can be hard, and has a learning curve, and sometimes requires maths (!), but it's also logical once you dare to look. It's sometimes surprising to compare the perception you have of people both before and after you read their actual code, even with my background as an automation tester rather than focussed developer. 
 
 And yet here I am, still wondering if I am missing some secret sauce or huge wealth of knowledge that all developers secretly have.
 

@@ -10,7 +10,7 @@ When deciding on a framework or tool for automation, there are a dizzying array 
 
 ### Who Will Use It?
 
-Think very carefully about the skills and knowledge of the people who will be using the framework. This is especially important if you are leading a team and making a decision about technology used by less experienced team members. Try out candidate frameworks for yourself and consider the learning curve as well as the depth of training materials available. Get less experienced team members to test the learning process and see if they find it approachable before you commit.
+Think carefully about the skills and knowledge of the people who will be using the framework. This is especially important if you are leading a team and making a decision about technology used by less experienced team members. Try out candidate frameworks for yourself and consider the learning curve as well as the depth of training materials available. Get less experienced team members to test the learning process and see if they find it approachable before you commit.
 
 
 ### Is It Well Established and Actively Maintained?

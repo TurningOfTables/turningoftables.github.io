@@ -36,7 +36,7 @@ Then, you add tooling to give you even more layers! Developers can make good use
 
 Testers can supplement their role with effective and reliable automated functional, system or integration checks, and production monitoring and testing tools can help to find or prevent issues encountered at deployment.
 
-Adding these tools acts as a 'force multiplier', enabling you to cover a lot of ground on simple checks very quickly and freeing your testers to focus on more complex, creative or exploratory testing.
+Adding these tools acts as a 'force multiplier', enabling you to cover a lot of ground on simple checks quickly and freeing your testers to focus on more complex, creative or exploratory testing.
 
 ### Conclusion
 

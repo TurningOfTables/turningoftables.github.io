@@ -53,7 +53,7 @@ Alongside this though, it can be difficult to find time to practice coding skill
 
 The general idea is that you are presented with a code challenge - often to write just a single function which, when tested, gives the expected outputs for the test inputs. It leads to a slightly different way of thinking in that the overall goal of the project matters less, and instead it polishes your skills at manipulating data, performing mathematical operations, and often iterating on your function to improve performance.
 
-So what have I learned from this that I didn't pick up from fuller project creation? It's a good question. I think it forces you to focus in on smaller units of code, and perhaps most of all hones logical thinking approaches to coding. I find I'm getting better at following through algorithms and in taking a given task and turning it into code.
+So what have I learned from this that I didn't pick up from fuller project creation? It's a good question. I think it forces you to focus on smaller units of code, and perhaps most of all hones logical thinking approaches to coding. I find I'm getting better at following through algorithms and in taking a given task and turning it into code.
 
 Would I recommend it to other people learning to code? Yes, but not to the exclusion of other types of learning. It skews towards the maths and computer science side of coding which is fine, but it perhaps takes you away from the 'engineering' thought process of organising and fitting together larger pieces of code into functioning products that solve a given problem or set of problems.
 

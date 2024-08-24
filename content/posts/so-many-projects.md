@@ -9,7 +9,7 @@ Working further with Go, and creating a microblog.<!--more-->
 
 I realised I hadn't posted an update in a while, and even if nobody reads these then it's nice for me to have a record of what I've been doing.
 
-I now have about ... 14 Go projects on Github, and I haven't actually given a rundown of more than a couple - what each one does and the area
+I now have about … 14 Go projects on Github, and I haven't actually given a rundown of more than a couple - what each one does and the area
 that it helped me to learn. I've been a bit sidetracked by life (and a nice holiday!) recently but wanted to get these down before the end of
 the year.
 
@@ -21,7 +21,7 @@ what functionality each one has.
 #### Functionality
 
 Wires is a microblog built with [Fiber](https://gofiber.io/) and [Gorm ORM](https://gorm.io/). At this point I'm relatively used to Fiber and continue to find it a nice solution for
-apps which need a tiny bit more than fairly simple routing, which the [Go net/http package](https://pkg.go.dev/net/http) provides.
+apps which need a bit more than fairly simple routing, which the [Go net/http package](https://pkg.go.dev/net/http) provides.
 
 You can register, log in, log out, post, view other people's lists of posts, change your password, delete your account and switch between profile pictures.
 
